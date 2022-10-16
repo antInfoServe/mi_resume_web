@@ -1,16 +1,14 @@
 {
   "hosting": {
-    "site":"miResume",
     "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   },
-  "rewrites": [
-    {
-      "source": "**",
-      "destination": "/index.html"
-    }
-  ],
-  "cleanUrls": true,
   "emulators": {
     "hosting": {
       "port": 5000

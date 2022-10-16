@@ -1,6 +1,3 @@
-/*!****************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/text.css ***!
-  \****************************************************************************/
 .text_regular{
     margin: 10px 0px 5px 0px;
     font-size: var(--font-size-default);
@@ -34,9 +31,6 @@
     color: var(--color-black);
 }
 
-/*!****************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/link.css ***!
-  \****************************************************************************/
 .link_normal{
     font-family: var(--font-family);
     font-size: var(--font-size);
@@ -46,9 +40,6 @@
 .link_nav{
     cursor: pointer;
 }
-/*!******************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/button.css ***!
-  \******************************************************************************/
 .button_regular {
   padding: 15px 20px 15px 20px;
   width: fit-content;
@@ -66,9 +57,6 @@
   background:  orange;
 }
 
-/*!*****************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/input.css ***!
-  \*****************************************************************************/
 .input_box_regular{
   width: 300px;
   padding: 15px 20px 15px 20px;
@@ -86,9 +74,6 @@
   margin: 5px 0px 10px 0px;
 }
 
-/*!****************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/card.css ***!
-  \****************************************************************************/
 .card-1 {
   display: block;
   padding: 2vw 2vw 2vw 2vw;
@@ -114,9 +99,6 @@
   align-items: center;
 }
 
-/*!*******************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/display.css ***!
-  \*******************************************************************************/
 .display_regular{
     width: 480px;
 }
@@ -126,9 +108,6 @@
         width: 100vw;
     }
 }
-/*!***************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/box.css ***!
-  \***************************************************************************/
 .box_banner {
   width: 100%;
   background-color: #e1e1e1;
@@ -163,9 +142,6 @@
   padding: 10px;
 }
 
-/*!*****************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/image.css ***!
-  \*****************************************************************************/
 .logo_landing{
     margin-top: 25px;
 }
@@ -205,9 +181,6 @@
     height: auto;
     fill: #ffffff;
 }
-/*!********************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/dropdown.css ***!
-  \********************************************************************************/
 .dropdown_regular {
   cursor: pointer;
   height: 50px;
@@ -218,9 +191,6 @@
   margin: 5px 0px 10px 0px;
 }
 
-/*!***************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/app.css ***!
-  \***************************************************************************/
 :root {
   --font-family-default: sans-serif;
   --color-black: black;

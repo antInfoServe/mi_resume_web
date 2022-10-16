@@ -20,6 +20,9 @@ module.exports = {
     filename: "./index.js",
     path: __dirname + "/public",
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   stats: {
     errorDetails: true,
   },
