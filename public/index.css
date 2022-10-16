@@ -1,0 +1,227 @@
+/*!****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/text.css ***!
+  \****************************************************************************/
+.text_regular{
+    margin: 10px 0px 5px 0px;
+    font-size: var(--font-size-default);
+    font-family: var(--font-family-default);
+    color: var(--color-black);
+    text-align: justify;
+}
+
+.text_notification{
+    font-size: var(--font-size-default);
+    font-family: var(--font-family-default);
+    color: var(--color-black);
+}
+
+.text_success{
+    font-size: var(--font-size-default);
+    font-family: var(--font-family-default);
+    color: green;
+}
+
+.text_error{
+    font-size: var(--font-size-default);
+    font-family: var(--font-family-default);
+    color: crimson;
+}
+
+.text_h1{
+    margin: 10px 0px 5px 0px;
+    font-size: var(--font-h1);
+    font-family: var(--font-family-default);
+    color: var(--color-black);
+}
+
+/*!****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/link.css ***!
+  \****************************************************************************/
+.link_normal{
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--font-color);
+}
+
+.link_nav{
+    cursor: pointer;
+}
+/*!******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/button.css ***!
+  \******************************************************************************/
+.button_regular {
+  padding: 15px 20px 15px 20px;
+  width: fit-content;
+  margin: 10px 0px 5px 10px;
+  background: var(--color-primary);
+  border: none;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: var(--color-black);
+  font-size: var(--font-size-default);
+  cursor: pointer;
+}
+
+.button_regular:active{
+  background:  orange;
+}
+
+/*!*****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/input.css ***!
+  \*****************************************************************************/
+.input_box_regular{
+  height: 50px;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin: 5px 0px 10px 0px;
+}
+
+.text_area {
+  width: 300px;
+  height: 80px;
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin: 5px 0px 10px 0px;
+}
+
+/*!****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/card.css ***!
+  \****************************************************************************/
+.card-1 {
+  display: block;
+  padding: 2vw 2vw 2vw 2vw;
+  text-align: center;
+  justify-content: center;
+  width: 40vw;
+  height: 40vw;
+  box-shadow: 0px 8px 8px #777777;
+  box-sizing: border-box;
+  border: 2px solid #999999;
+  margin: 4vw;
+}
+
+.card_item {
+  height: 40px;
+  padding: 0px 10px 0px 10px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*!*******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/display.css ***!
+  \*******************************************************************************/
+.display_regular{
+    width: 480px;
+}
+
+@media only screen and (max-width: 600px) {
+    .display_regular{
+        width: 100vw;
+    }
+}
+/*!***************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/box.css ***!
+  \***************************************************************************/
+.box_banner{
+  width: 100%;
+  background-color: #e1e1e1;
+}
+
+.box_flex_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.box_flex_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 16px
+}
+/*!*****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/image.css ***!
+  \*****************************************************************************/
+.logo_landing{
+    margin-top: 25px;
+}
+
+.image_notifier{
+    width: 60%;
+    margin: 20px;
+}
+
+.icon_xs{
+    width: var(--icon-width-xs);
+    height: auto;
+    fill: var(--font-color-3);
+}
+
+
+.w_icon_normal{
+    width: var(--icon-width);
+    height: auto;
+    fill: #ffffff;
+}
+
+.icon_normal{
+    width: var(--icon-width);
+    height: auto;
+    fill: var(--font-color-3);
+}
+
+.icon_xl{
+    width: var(--icon-width-xl);
+    height: auto;
+    fill: var(--font-color-3);
+}
+
+.w_icon_2xl{
+    width: var(--icon-width-2xl);
+    height: auto;
+    fill: #ffffff;
+}
+/*!********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/dropdown.css ***!
+  \********************************************************************************/
+.dropdown_regular {
+  cursor: pointer;
+  height: 50px;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin: 5px 0px 10px 0px;
+}
+
+/*!***************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/app.css ***!
+  \***************************************************************************/
+:root {
+  --font-family-default: sans-serif;
+  --color-black: black;
+  --color-primary: #ffac30;
+  --font-size-default: 14px;
+  --font-h1: 18px;
+}
+
+html {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+

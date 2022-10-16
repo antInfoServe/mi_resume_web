@@ -1,0 +1,39 @@
+.logo_landing{
+    margin-top: 25px;
+}
+
+.image_notifier{
+    width: 60%;
+    margin: 20px;
+}
+
+.icon_xs{
+    width: var(--icon-width-xs);
+    height: auto;
+    fill: var(--font-color-3);
+}
+
+
+.w_icon_normal{
+    width: var(--icon-width);
+    height: auto;
+    fill: #ffffff;
+}
+
+.icon_normal{
+    width: var(--icon-width);
+    height: auto;
+    fill: var(--font-color-3);
+}
+
+.icon_xl{
+    width: var(--icon-width-xl);
+    height: auto;
+    fill: var(--font-color-3);
+}
+
+.w_icon_2xl{
+    width: var(--icon-width-2xl);
+    height: auto;
+    fill: #ffffff;
+}

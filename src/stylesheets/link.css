@@ -1,0 +1,9 @@
+.link_normal{
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--font-color);
+}
+
+.link_nav{
+    cursor: pointer;
+}

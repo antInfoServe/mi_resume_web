@@ -1,0 +1,9 @@
+.display_regular{
+    width: 480px;
+}
+
+@media only screen and (max-width: 600px) {
+    .display_regular{
+        width: 100vw;
+    }
+}

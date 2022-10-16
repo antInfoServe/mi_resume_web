@@ -1,0 +1,32 @@
+.text_regular{
+    margin: 10px 0px 5px 0px;
+    font-size: var(--font-size-default);
+    font-family: var(--font-family-default);
+    color: var(--color-black);
+    text-align: justify;
+}
+
+.text_notification{
+    font-size: var(--font-size-default);
+    font-family: var(--font-family-default);
+    color: var(--color-black);
+}
+
+.text_success{
+    font-size: var(--font-size-default);
+    font-family: var(--font-family-default);
+    color: green;
+}
+
+.text_error{
+    font-size: var(--font-size-default);
+    font-family: var(--font-family-default);
+    color: crimson;
+}
+
+.text_h1{
+    margin: 10px 0px 5px 0px;
+    font-size: var(--font-h1);
+    font-family: var(--font-family-default);
+    color: var(--color-black);
+}

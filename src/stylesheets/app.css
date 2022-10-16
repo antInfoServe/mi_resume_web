@@ -1,0 +1,27 @@
+:root {
+  --font-family-default: sans-serif;
+  --color-black: black;
+  --color-primary: #ffac30;
+  --font-size-default: 14px;
+  --font-h1: 18px;
+}
+
+html {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+@import "text.css";
+@import "link.css";
+@import "button.css";
+@import "input.css";
+@import "card.css";
+@import "display.css";
+@import "box.css";
+@import "image.css";
+@import "dropdown.css";
