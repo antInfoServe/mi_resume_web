@@ -2,7 +2,8 @@ import React from 'react'
 import MiResumeLogo from '../../assets/mi_resume_logo.svg'
 import LandingPageVector from '../../assets/landing_page_vector.svg'
 
-const LandingPageForm = ({ staticText }) => {
+const LandingPageForm = ({ staticText, useNavigate }) => {
+    const navigate = useNavigate()
     return (
         <div className='display_regular'>
             <div className='box_flex_row box_banner'>
@@ -14,7 +15,7 @@ const LandingPageForm = ({ staticText }) => {
                 <p className='text_h1'>{staticText.landingPageTitle}</p>
                 <p className='text_regular'>{staticText.resumesCreated}</p>
                 <LandingPageVector />
-                <button className='button_regular'>{staticText.newResume}</button>
+                <button className='button_regular' onClick={()=>navigate("/personalDetail")}>{staticText.newResume}</button>
                 <button className='button_regular'>{staticText.existingResume}</button>
             </div>
         </div>

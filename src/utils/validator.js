@@ -2,53 +2,83 @@ const validatorFactory = () => new Validator()
 
 class Validator {
     constructor() {
+        this.error = null
     }
 
     name(name) {
-        if (name == "") {
-            throw new Error('please enter your name')
+        if (name == "" || name == undefined) {
+            this.error = new Error('please enter your name')
+            this.error.id = 'name'
+            throw this.error
         }
-        const regex = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/
-        if(regex.test(name)){
-            throw new Error("name should not contain any special characters")
+        const regex = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~\d]/
+        if (regex.test(name)) {
+            this.error = new Error("name should not contain any special characters or numeric values")
+            this.error.id = "name"
+            throw this.error
         }
         return true
     }
 
-    mobileNo(mobileNo) {
+    email(email) {
+        if (email == "" || email == undefined) {
+            this.error = new Error('please enter email address')
+            this.error.id = "email"
+            throw this.error
+        }
+        const regex = /^[a-zA-Z0-9][a-zA-Z0-9\.\_\-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*$/
+        if (!regex.test(email)) {
+            this.error = new Error("please enter a valid email id")
+            this.error.id = "email"
+            throw this.error
+        }
+        return true
+    }
+
+    city(city) {
+        const regex = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~\d]/
+        if (regex.test(city)) {
+            this.error = new Error("city should not contain any special characters or numeric values")
+            this.error.id = 'city'
+            throw this.error
+        }
+        return true
+    }
+
+    mobile(mobile) {
+        if (mobile == "" || mobile == undefined) {
+            this.error = new Error('please enter your mobile number')
+            this.error.id = 'mobile'
+            throw this.error
+        }
         const regex = /^[5-9]\d{9}$/
-        return regex.test(mobileNo)
-    }
-
-    emailId(email) {
-        if (email == "") {
-            throw new Error('please enter email id')
-            return
-        }
-        const regex = /^[a-zA-Z0-9][a-zA-Z0-9\.\_\-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-        if(!regex.test(email)){
-            throw new Error("please enter a valid email id")
+        if (!regex.test(mobile)) {
+            this.error = new Error("please enter a valid mobile number")
+            this.error.id = 'mobile'
+            throw this.error
         }
         return true
     }
 
-    password(password, reEnterPassword) {
-        if (password == "") {
-            throw new Error('please enter password')
+    pincode(pincode) {
+        if (pincode == "" || pincode == undefined) {
             return
         }
-        if (reEnterPassword == "") {
-            throw new Error('please re-enter password')
-            return
-        }
-        if(password.length < 6 || reEnterPassword.length < 6){
-            throw new Error('password should have least 6 characters')
-        }
-        if (password != reEnterPassword) {
-            throw new Error("password mismatch")
+        const regex = /^\d{7}$/
+        if (!regex.test(pincode)) {
+            this.error = new Error("please enter a valid pincode")
+            this.error.id = 'pincode'
+            throw this.error
         }
         return true
+    }
+
+    personalDetails({ name, mobile, email, city, pincode }) {
+        this.name(name)
+        this.mobile(mobile)
+        this.email(email)
+        this.city(city)
+        this.pincode(pincode)
     }
 }
-
 export default validatorFactory

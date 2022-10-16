@@ -1,7 +1,6 @@
 .input_box_regular{
-  height: 50px;
   width: 300px;
-  padding: 20px;
+  padding: 15px 20px 15px 20px;
   border: 1px solid #000000;
   border-radius: 10px;
   margin: 5px 0px 10px 0px;

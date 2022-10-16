@@ -1,25 +1,15 @@
-import React from 'react'
-import staticText from '../../utils/staticText';
+import React, { useState } from 'react'
 
 const WithLandingPage = (container) => {
-    return class LandingPageContainer extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = {
-                staticText: container.staticText
-            }
-        }
-
-        render() {
-            const { staticText } = this.state
-            return (
-                <>
-                    <container.LandingPageForm
-                        staticText={staticText}
-                    />
-                </>
-            )
-        }
+    return (props) => {
+        return (
+            <>
+                <container.LandingPageForm
+                    staticText={container.staticText}
+                    useNavigate={container.useNavigate}
+                />
+            </>
+        )
     }
 }
 
