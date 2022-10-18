@@ -4,6 +4,8 @@
   --color-primary: #ffac30;
   --font-size-default: 14px;
   --font-h1: 18px;
+  --color-secondary: #fafafa;
+  --color-tertiary: #e1e1e1;
 }
 
 html {

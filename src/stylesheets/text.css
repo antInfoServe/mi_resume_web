@@ -4,6 +4,7 @@
     font-family: var(--font-family-default);
     color: var(--color-black);
     text-align: justify;
+    word-break: break-all;
 }
 
 .text_notification{

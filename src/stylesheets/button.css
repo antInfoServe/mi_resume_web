@@ -14,3 +14,33 @@
 .button_regular:active{
   background:  orange;
 }
+
+.button_white {
+  padding: 15px 20px 15px 20px;
+  width: fit-content;
+  margin: 10px 0px 5px 0px;
+  background: var(--color-secondary);
+  border: none;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid black;
+  color: var(--color-black);
+  font-size: var(--font-size-default);
+  cursor: pointer;
+}
+
+.button_white:active{
+  background:  #fafafa;
+}
+
+.button_link{
+  text-decoration: underline;
+  background-color: white;
+  padding: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button_link:active{
+  color: var(--color-primary);
+}

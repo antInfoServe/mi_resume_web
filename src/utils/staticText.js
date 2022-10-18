@@ -10,7 +10,27 @@ const staticText = {
   email: "email address *",
   city: "city",
   pincode: "pincode",
-  submitPersonalDetails:"next:education"
+  submitPersonalDetails: "next:education",
+  closeModal: "close X",
+  universityName: "school/university",
+  degree: "qualification/degree",
+  field: "field of study",
+  startDate: "start date",
+  endDate: "end date",
+  detail: "details",
+  delete: "delete",
+  submitEducation: "next:experience",
+  phd: "Phd/Doctors",
+  masters: "masters(MA, ME, MS, MBA, etc.)",
+  pgdm: "post-graduate diploma",
+  graduation: "graduation",
+  diploma: "diploma",
+  tenthPlusTwo: "10 +2",
+  tenth: "metric",
+  edit:"edit",
+  month:"month",
+  year:"year",
+  presentHere:"or i currently study here"
 };
 
 export default staticText;
