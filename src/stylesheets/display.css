@@ -1,9 +1,4 @@
 .display_regular{
-    width: 480px;
+    width: var(--app-width);
 }
 
-@media only screen and (max-width: 600px) {
-    .display_regular{
-        width: 100vw;
-    }
-}

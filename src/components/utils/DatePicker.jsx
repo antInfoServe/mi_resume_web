@@ -5,7 +5,7 @@ const DatePicker = ({ staticText, handleChange, id, date }) => {
         <div className='box_flex_row_left'>
             <div>
                 <p className='text_regular'>{staticText[id]} {staticText.month}</p>
-                <select name='month' id={id} className='dropdown_mini'>
+                <select name='month' id={id} className='dropdown_mini' onChange={handleChange}>
                     {
                         Array.from({ length: 12 }, (_, i) => i + 1).map((ele, index) => <option key={index}>{ele}</option>)
                     }
@@ -13,7 +13,7 @@ const DatePicker = ({ staticText, handleChange, id, date }) => {
             </div>
             <div>
                 <p className='text_regular'>{staticText[id]} {staticText.year}</p>
-                <select name='year' id={id} className='dropdown_mini'>
+                <select name='year' id={id} className='dropdown_mini' onChange={handleChange}>
                     {
                         Array.from({ length: 50 }, (_, i) => new Date().getFullYear() - i).map((ele, index) => <option key={index}>{ele}</option>)
                     }

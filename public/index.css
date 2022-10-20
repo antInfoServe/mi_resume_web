@@ -129,22 +129,19 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/display.css ***!
   \*******************************************************************************/
 .display_regular{
-    width: 480px;
+    width: var(--app-width);
 }
 
-@media only screen and (max-width: 600px) {
-    .display_regular{
-        width: 100vw;
-    }
-}
+
 /*!***************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/stylesheets/box.css ***!
   \***************************************************************************/
 .box_banner {
-  width: 100%;
+  width: var(--app-width);
   background-color: #e1e1e1;
   display: flex;
   align-items: center;
+  padding: 10px 0px 10px 0px;
   justify-content: space-around;
 }
 
@@ -152,21 +149,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 15px;
 }
 
 .box_flex_row {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  gap: 16px;
+  justify-content: center;
+  gap: 15px;
 }
 
 .box_flex_row_right {
   display: flex;
   flex-direction: row;
   justify-content: end;
+  gap: 15px;
   padding: 10px 20px 10px 0px;
 }
 .box_flex_row_left {
@@ -185,17 +183,18 @@
 
 .box_modal {
   position: fixed;
-  width: inherit;
-  padding: 10px;
+  width: calc(var(--app-width) - 10px);
+  padding: 10px 0px 10px 10px;
   margin-top: 10vh;
   height: 80vh;
-  border-radius: 25px 25px 0px 0px;
-  box-shadow: 0px -5px 5px var(--color-secondary);
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: 0px -5px 5px var(--color-tertiary);
   overflow-y: scroll;
   background-color: white;
 }
 
 .box_card {
+  width: calc(var(--app-width) - 40px);
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
@@ -282,6 +281,20 @@
   --font-h1: 18px;
   --color-secondary: #fafafa;
   --color-tertiary: #e1e1e1;
+  --app-width: 480px
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --font-family-default: sans-serif;
+    --color-black: black;
+    --color-primary: #ffac30;
+    --font-size-default: 14px;
+    --font-h1: 18px;
+    --color-secondary: #fafafa;
+    --color-tertiary: #e1e1e1;
+    --app-width:100vw
+  }
 }
 
 html {
@@ -292,5 +305,9 @@ html {
 body {
   padding: 0px;
   margin: 0px;
+}
+
+#root{
+  height: 100vh
 }
 

@@ -30,7 +30,10 @@ const staticText = {
   edit:"edit",
   month:"month",
   year:"year",
-  presentHere:"or i currently study here"
+  presentHere:"or i currently study here",
+  period:"period",
+  addEducation:"add education",
+  save:"save"
 };
 
 export default staticText;

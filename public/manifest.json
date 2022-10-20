@@ -20,8 +20,8 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://*.web.app/*"],
-      "css": ["index.css"]
+      "matches": ["https://*"],
+      "css": ["/index.css"]
     }
   ],
   "start_url": ".",

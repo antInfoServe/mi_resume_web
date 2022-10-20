@@ -6,11 +6,9 @@ import EducationDetailPage from "./provider/educationDetailPageProvider";
 
 import "./stylesheets/app.css";
 
-const user = React.createContext([])
-
 const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />

@@ -6,6 +6,20 @@
   --font-h1: 18px;
   --color-secondary: #fafafa;
   --color-tertiary: #e1e1e1;
+  --app-width: 480px
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --font-family-default: sans-serif;
+    --color-black: black;
+    --color-primary: #ffac30;
+    --font-size-default: 14px;
+    --font-h1: 18px;
+    --color-secondary: #fafafa;
+    --color-tertiary: #e1e1e1;
+    --app-width:100vw
+  }
 }
 
 html {
@@ -16,6 +30,10 @@ html {
 body {
   padding: 0px;
   margin: 0px;
+}
+
+#root{
+  height: 100vh
 }
 
 @import "text.css";
