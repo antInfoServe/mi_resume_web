@@ -5,7 +5,7 @@
   --font-size-default: 14px;
   --font-h1: 18px;
   --color-secondary: #fafafa;
-  --color-tertiary: #e1e1e1;
+  --color-tertiary: #9e9e9e;
   --app-width: 480px
 }
 
@@ -17,7 +17,7 @@
     --font-size-default: 14px;
     --font-h1: 18px;
     --color-secondary: #fafafa;
-    --color-tertiary: #e1e1e1;
+    --color-tertiary: #9e9e9e;
     --app-width:100vw
   }
 }

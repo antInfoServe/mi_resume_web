@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import React from 'react'
 import MiResumeLogo from '../../assets/mi_resume_logo.svg'
 import LandingPageVector from '../../assets/landing_page_vector.svg'
@@ -24,5 +23,3 @@ const LandingPageForm = ({ staticText, useNavigate }) => {
 }
 
 export default LandingPageForm
-=======
->>>>>>> Stashed changes
