@@ -33,7 +33,11 @@ const staticText = {
   presentHere:"or i currently study here",
   period:"period",
   addEducation:"add education",
-  save:"save"
+  save:"save",
+  employerName:"employer name",
+  designation:"designation",
+  submitExperience:"almost there",
+  addExperience:"add experience"
 };
 
 export default staticText;

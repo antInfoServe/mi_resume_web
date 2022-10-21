@@ -15,7 +15,7 @@ const LandingPageForm = ({ staticText, useNavigate }) => {
                 <p className='text_h1'>{staticText.landingPageTitle}</p>
                 <p className='text_regular'>{staticText.resumesCreated}</p>
                 <LandingPageVector />
-                <button className='button_regular' onClick={()=>navigate("/educationDetail")}>{staticText.newResume}</button>
+                <button className='button_regular' onClick={()=>navigate("/experienceDetail")}>{staticText.newResume}</button>
                 <button className='button_regular'>{staticText.existingResume}</button>
             </div>
         </div>
