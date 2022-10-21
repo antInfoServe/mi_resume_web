@@ -47,7 +47,14 @@ const staticText = {
   awardDetail: "add/edit awards and honours",
   language: "add/edit languages",
   reference: "add/edit references",
-  generateResume:'generate resume'
+  generateResume: 'generate resume',
+  submit: "submit",
+  linkedin: "linkedIn",
+  instagram: "instagram",
+  facebook: "facebook",
+  github: "github",
+  portfolio: "portfolio"
+
 };
 
 export default staticText;

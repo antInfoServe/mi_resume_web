@@ -5,6 +5,7 @@ import PersonalDetailPage from "./provider/personalDetailPageProvider";
 import EducationDetailPage from "./provider/educationDetailPageProvider";
 import ExperienceDetailPage from "./provider/experienceDetailPageProvider";
 import MenuPage from "./provider/menuPageProvider";
+import SocialLinkPage from "./provider/socialLinkPageProvider";
 
 import "./stylesheets/app.css";
 
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/educationDetail" element={<EducationDetailPage />} />
           <Route path="/experienceDetail" element={<ExperienceDetailPage />} />
           <Route path='/menu' element={<MenuPage />} />
+          <Route path='/socialLink' element={<SocialLinkPage />} />
         </Routes>
       </BrowserRouter>
     </div>
