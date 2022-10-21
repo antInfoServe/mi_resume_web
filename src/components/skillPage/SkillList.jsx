@@ -9,7 +9,7 @@ const SkillList = ({ staticText, useNavigate, skillList, handleRemove, handleAdd
             </div>
             <div className="box_flex_row">
                 <input className="input_box_small" placeholder={staticText.searchSkill} value={skill} onChange={handleChange} />
-                <button className="button_regular" onClick={handleAddSkill}>{staticText.addSkill}</button>
+                <button className="button_regular" onClick={handleAddSkill}>{staticText.add}</button>
             </div>
             <div className="box_flex_col_left">
                 {

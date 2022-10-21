@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import MiResumeLogo from '../../assets/mi_resume_logo.svg'
 
-const EducationDetailList = ({ educationList,
+const CourseDetailList = ({ courseList,
     staticText,
-    EducationDetailForm,
+    CourseDetailForm,
     DatePicker,
     handleChange,
     formData,
     handleSave,
     handleDelete,
     handleModal,
-    addEducation,
+    addCourse,
     handleEdit
 }) => {
     return (
@@ -20,7 +20,7 @@ const EducationDetailList = ({ educationList,
             </div>
             <div>
                 {
-                    addEducation ? <EducationDetailForm
+                    addCourse ? <CourseDetailForm
                         staticText={staticText}
                         DatePicker={DatePicker}
                         handleModal={handleModal}
@@ -32,17 +32,14 @@ const EducationDetailList = ({ educationList,
             </div>
             <div className="box_flex_col_left">
                 {
-                    //educationDetailCard
-                    educationList.length > 0 ? educationList.map((ele, index) =>
+                    //courseDetailCard
+                    courseList.length > 0 ? courseList.map((ele, index) =>
                         <div key={index} className="box_card">
                             <div>
-                                <p className='text_label'>{staticText.universityName}</p><p className='text_regular'>{ele.universityName}</p>
+                                <p className='text_label'>{staticText.employerName}</p><p className='text_regular'>{ele.employerName}</p>
                             </div>
                             <div>
-                                <p className='text_label'>{staticText.degree}</p><p className='text_regular'>{ele.degree}</p>
-                            </div>
-                            <div>
-                                <p className='text_label'>{staticText.field}</p><p className='text_regular'>{ele.field}</p>
+                                <p className='text_label'>{staticText.designation}</p><p className='text_regular'>{ele.designation}</p>
                             </div>
                             <div>
                                 <p className='text_label'>{staticText.period}</p><p className='text_regular'>{ele.startDate.month} / {ele.startDate.year} to {ele.presentHere ? "present" : ele.endDate.month + ' / ' + ele.endDate.year}</p>
@@ -59,11 +56,11 @@ const EducationDetailList = ({ educationList,
                 }
                 <div className="box_flex_row_right">
                     <button className="button_white" onClick={() => handleModal(true)}>{staticText.add}</button>
-                    <button className="button_regular">{staticText.submitEducation}</button>
+                    <button className="button_regular">{staticText.submit}</button>
                 </div>
             </div>
         </div>
     )
 }
 
-export default EducationDetailList
+export default CourseDetailList

@@ -9,11 +9,11 @@ const ExperienceDetailForm = ({ staticText, DatePicker, handleModal, handleChang
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.employerName}</p>
-                    <input id='universityName' value={formData.employerName} onChange={handleChange} className='input_box_regular' placeholder={staticText.employerName} />
+                    <input id='employerName' value={formData.employerName} onChange={handleChange} className='input_box_regular' placeholder={staticText.employerName} />
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.designation}</p>
-                    <input id='field' className='input_box_regular' value={formData.designation} onChange={handleChange} placeholder={staticText.designation} />
+                    <input id='designation' className='input_box_regular' value={formData.designation} onChange={handleChange} placeholder={staticText.designation} />
                 </div>
                 <div>
                     <DatePicker id='startDate' staticText={staticText} date={formData.startDate} handleChange={handleChange} />

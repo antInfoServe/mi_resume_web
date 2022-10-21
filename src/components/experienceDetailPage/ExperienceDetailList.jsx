@@ -55,7 +55,7 @@ const ExperienceDetailList = ({ experienceList,
                     ) : <div></div>
                 }
                 <div className="box_flex_row_right">
-                    <button className="button_white" onClick={() => handleModal(true)}>{staticText.addExperience}</button>
+                    <button className="button_white" onClick={() => handleModal(true)}>{staticText.add}</button>
                     <button className="button_regular">{staticText.submitExperience}</button>
                 </div>
             </div>

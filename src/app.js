@@ -7,6 +7,7 @@ import ExperienceDetailPage from "./provider/experienceDetailPageProvider";
 import MenuPage from "./provider/menuPageProvider";
 import SocialLinkPage from "./provider/socialLinkPageProvider";
 import SkillPage from "./provider/skillPageProvider";
+import CourseDetailPage from "./provider/courseDetailPageProvider";
 
 import "./stylesheets/app.css";
 
@@ -16,12 +17,13 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/personalDetail" element={<PersonalDetailPage />} />
-          <Route path="/educationDetail" element={<EducationDetailPage />} />
-          <Route path="/experienceDetail" element={<ExperienceDetailPage />} />
+          <Route path="/personal" element={<PersonalDetailPage />} />
+          <Route path="/education" element={<EducationDetailPage />} />
+          <Route path="/experience" element={<ExperienceDetailPage />} />
           <Route path='/menu' element={<MenuPage />} />
           <Route path='/socialLink' element={<SocialLinkPage />} />
           <Route path="/skill" element={<SkillPage />} />
+          <Route path="/course" element={<CourseDetailPage />} />
         </Routes>
       </BrowserRouter>
     </div>

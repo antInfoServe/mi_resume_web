@@ -1,7 +1,7 @@
 import Container from '../container'
 
 import WithExperienceDetailPage from '../components/experienceDetailPage/WithExperienceDetailPage'
-import ExperienceDetailForm from '../components/experienceDetailPage/EcperienceDetailForm'
+import ExperienceDetailForm from '../components/experienceDetailPage/ExperienceDetailForm'
 import ExperienceDetailList from '../components/experienceDetailPage/ExperienceDetailList'
 import staticText from '../utils/staticText'
 import validatorFactory from '../utils/validator'

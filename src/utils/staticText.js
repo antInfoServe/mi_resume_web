@@ -32,12 +32,10 @@ const staticText = {
   year: "year",
   presentHere: "or i currently study here",
   period: "period",
-  addEducation: "add education",
   save: "save",
   employerName: "employer name",
   designation: "designation",
   submitExperience: "almost there",
-  addExperience: "add experience",
   profileDetail: "add/edit profile",
   educationDetail: "add/edit education",
   experienceDetail: "add/edit experience",
@@ -55,8 +53,11 @@ const staticText = {
   github: "github",
   portfolio: "portfolio",
   searchSkill:"search skills",
-  addSkill:"add skill",
-  remove:"X remove"
+  remove:"X remove",
+  add:"add +",
+  instituteName:"institute name",
+  courseName:"course name",
+  certificate:"certificate link"
 };
 
 export default staticText;
