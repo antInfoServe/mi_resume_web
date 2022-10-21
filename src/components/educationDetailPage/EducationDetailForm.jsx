@@ -14,13 +14,13 @@ const EducationDetailForm = ({ staticText, DatePicker, handleModal, handleChange
                 <div>
                     <p className='text_regular'>{staticText.degree}</p>
                     <select id="degree" value={formData.degree} className='dropdown_regular' onChange={handleChange}>
-                        <option value="phd">{staticText.phd}</option>
-                        <option value="masters">{staticText.masters}</option>
-                        <option value="pdgm">{staticText.pgdm}</option>
-                        <option value="graduation">{staticText.graduation}</option>
-                        <option value="diploma">{staticText.diploma}</option>
-                        <option value="tenthPlusTwo">{staticText.tenthPlusTwo}</option>
-                        <option value="tenth">{staticText.tenth}</option>
+                        <option value={staticText.phd}>{staticText.phd}</option>
+                        <option value={staticText.masters}>{staticText.masters}</option>
+                        <option value={staticText.pgdm}>{staticText.pgdm}</option>
+                        <option value={staticText.graduation}>{staticText.graduation}</option>
+                        <option value={staticText.diploma}>{staticText.diploma}</option>
+                        <option value={staticText.tenthPlusTwo}>{staticText.tenthPlusTwo}</option>
+                        <option value={staticText.tenthPlusTwo}>{staticText.tenthPlusTwo}</option>
                     </select>
                 </div>
                 <div>
@@ -40,8 +40,7 @@ const EducationDetailForm = ({ staticText, DatePicker, handleModal, handleChange
                     <p className='text_regular'>{staticText.detail}</p>
                     <textarea id='detail' className='text_area_regular' onChange={handleChange} placeholder={staticText.detail} />
                 </div>
-                <div className='box_flex_row'>
-                    <button id='delete' className='button_white'>{staticText.delete}</button>
+                <div className='box_flex_row_right'>
                     <button id='submit' className='button_regular' onClick={handleSave}>{staticText.save}</button>
                 </div>
             </div>

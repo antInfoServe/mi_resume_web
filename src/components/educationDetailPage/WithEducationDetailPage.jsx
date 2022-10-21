@@ -14,9 +14,26 @@ const WithEducationDetailPage = (container) => {
                 month: '8',
                 year:'2019'
             },
-            detail: 'enwfonqejrvoqerrnarneobvnwtroienovsDvneqoraslvnowenbow 4euarbsnovn2we'
+            detail: 'enwfonqejrvoqerrnarneobvnwtroienovsDvneqoraslvnowenbow 4euarbsnovn2we',
+            presentHere: true
+        },
+        {
+            universityName: 'Gurugobind Singh World University',
+            degree: 'Graduation',
+            field: 'Industrial Engineering',
+            startDate: {
+                month:'10',
+                year:'2015'
+            },
+            endDate:{
+                month: '8',
+                year:'2019'
+            },
+            detail: 'enwfonqejrvoqerrnarneobvnwtroienovsDvneqoraslvnowenbow 4euarbsnovn2we',
+            presentHere: false
         }])
         const [formData, setFormData] = useState({ presentHere: false, startDate: {}, endDate: {} })
+        const [addEducation, setAddEducation] = useState(true)
 
         const handleChange = (e) => {
             const data = formData
@@ -32,10 +49,27 @@ const WithEducationDetailPage = (container) => {
             return setFormData(data)
         }
 
+        const handleEdit = (e) => {
+            setFormData(educationList[e.target.value])
+            setAddEducation(true)
+            return handleDelete(e)
+        }
+    
+        const handleModal = (bool) => {
+            return setAddEducation(bool)
+        }
+
         const handleSave = () => {
-            const list = educationList
+            const list = [...educationList]
             list.push(formData)
             setEducationList(list)
+            return handleModal(false)
+        }
+
+        const handleDelete =(e) =>{
+            const list = [...educationList]
+            list.splice(e.target.value, 1)
+            return setEducationList(list)
         }
 
         return (
@@ -45,9 +79,13 @@ const WithEducationDetailPage = (container) => {
                     educationList={educationList}
                     EducationDetailForm={container.EducationDetailForm}
                     DatePicker={container.DatePicker}
-                    handleChange={handleChange}
                     formData={formData}
+                    addEducation = {addEducation}
+                    handleChange={handleChange}
                     handleSave={handleSave}
+                    handleDelete = {handleDelete}
+                    handleModal = {handleModal}
+                    handleEdit = {handleEdit}
                 />
             </>
         )

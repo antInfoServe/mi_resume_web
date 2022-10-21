@@ -38,6 +38,13 @@ module.exports = {
       template: __dirname + "/src/index.html",
       filename: "./index.html",
       favicon: "./src/assets/favicon.ico",
+      meta: [
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1'
+        }
+      ],
+      mobile: true
     }),
     new MiniCssExtractPlugin({
       filename: "./index.css",
