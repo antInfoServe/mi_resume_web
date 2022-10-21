@@ -6,6 +6,7 @@ import EducationDetailPage from "./provider/educationDetailPageProvider";
 import ExperienceDetailPage from "./provider/experienceDetailPageProvider";
 import MenuPage from "./provider/menuPageProvider";
 import SocialLinkPage from "./provider/socialLinkPageProvider";
+import SkillPage from "./provider/skillPageProvider";
 
 import "./stylesheets/app.css";
 
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/experienceDetail" element={<ExperienceDetailPage />} />
           <Route path='/menu' element={<MenuPage />} />
           <Route path='/socialLink' element={<SocialLinkPage />} />
+          <Route path="/skill" element={<SkillPage />} />
         </Routes>
       </BrowserRouter>
     </div>

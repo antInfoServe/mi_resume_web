@@ -53,8 +53,10 @@ const staticText = {
   instagram: "instagram",
   facebook: "facebook",
   github: "github",
-  portfolio: "portfolio"
-
+  portfolio: "portfolio",
+  searchSkill:"search skills",
+  addSkill:"add skill",
+  remove:"X remove"
 };
 
 export default staticText;

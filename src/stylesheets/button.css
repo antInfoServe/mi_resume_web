@@ -39,6 +39,8 @@
   padding: none;
   border: none;
   cursor: pointer;
+  font-size: x-small;
+  color: var(--color-tertiary)
 }
 
 .button_link:active{
