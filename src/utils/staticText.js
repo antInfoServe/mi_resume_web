@@ -62,7 +62,8 @@ const staticText = {
   proficiency:"proficiency",
   beginner:"beginner",
   intermediate:"intermediate",
-  expert:"expert"
+  expert:"expert",
+  companyName:"company name"
 };
 
 export default staticText;

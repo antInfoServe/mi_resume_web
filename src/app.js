@@ -9,6 +9,8 @@ import SocialLinkPage from "./provider/socialLinkPageProvider";
 import SkillPage from "./provider/skillPageProvider";
 import CourseDetailPage from "./provider/courseDetailPageProvider";
 import LanguageDetailPage from "./provider/languageDetailPageProvider";
+import ReferenceDetailPage from "./provider/experienceDetailPageProvider copy";
+
 import "./stylesheets/app.css";
 
 const App = () => {
@@ -25,6 +27,7 @@ const App = () => {
           <Route path="/skill" element={<SkillPage />} />
           <Route path="/course" element={<CourseDetailPage />} />
           <Route path='/language' element={<LanguageDetailPage />} />
+          <Route path='/reference' element={<ReferenceDetailPage />} />
         </Routes>
       </BrowserRouter>
     </div>
