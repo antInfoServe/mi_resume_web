@@ -20,7 +20,7 @@ const EducationDetailForm = ({ staticText, DatePicker, handleModal, handleChange
                         <option value={staticText.graduation}>{staticText.graduation}</option>
                         <option value={staticText.diploma}>{staticText.diploma}</option>
                         <option value={staticText.tenthPlusTwo}>{staticText.tenthPlusTwo}</option>
-                        <option value={staticText.tenthPlusTwo}>{staticText.tenthPlusTwo}</option>
+                        <option value={staticText.tenth}>{staticText.tenth}</option>
                     </select>
                 </div>
                 <div>

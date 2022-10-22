@@ -57,7 +57,12 @@ const staticText = {
   add:"add +",
   instituteName:"institute name",
   courseName:"course name",
-  certificate:"certificate link"
+  certificate:"certificate link",
+  language:"language",
+  proficiency:"proficiency",
+  beginner:"beginner",
+  intermediate:"intermediate",
+  expert:"expert"
 };
 
 export default staticText;

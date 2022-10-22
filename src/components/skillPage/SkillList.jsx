@@ -13,7 +13,7 @@ const SkillList = ({ staticText, useNavigate, skillList, handleRemove, handleAdd
             </div>
             <div className="box_flex_col_left">
                 {
-                    skillList.length != 0 ? skillList.map((ele, index) => <div key={index} className="box_flex_row_left">
+                    skillList.length != 0 ? skillList.map((ele, index) => <div key={index} className="box_flex_row_apart">
                         <p className="text_regular">{ele}</p>
                         <button className="button_link" id={index} onClick={handleRemove}>{staticText.remove}</button>
                     </div>

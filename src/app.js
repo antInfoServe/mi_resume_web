@@ -8,7 +8,7 @@ import MenuPage from "./provider/menuPageProvider";
 import SocialLinkPage from "./provider/socialLinkPageProvider";
 import SkillPage from "./provider/skillPageProvider";
 import CourseDetailPage from "./provider/courseDetailPageProvider";
-
+import LanguageDetailPage from "./provider/languageDetailPageProvider";
 import "./stylesheets/app.css";
 
 const App = () => {
@@ -24,6 +24,7 @@ const App = () => {
           <Route path='/socialLink' element={<SocialLinkPage />} />
           <Route path="/skill" element={<SkillPage />} />
           <Route path="/course" element={<CourseDetailPage />} />
+          <Route path='/language' element={<LanguageDetailPage />} />
         </Routes>
       </BrowserRouter>
     </div>
