@@ -9,11 +9,11 @@ const EducationDetailForm = ({ staticText, DatePicker, handleModal, handleChange
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.universityName}</p>
-                    <input id='universityName' value={formData.universityName} onChange={handleChange} className='input_box_regular' placeholder={staticText.universityName} />
+                    <input id='universityName' name={staticText.universityName} value={formData.universityName} onChange={handleChange} className='input_box_regular' placeholder={staticText.universityName} />
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.degree}</p>
-                    <select id="degree" value={formData.degree} className='dropdown_regular' onChange={handleChange}>
+                    <select id="degree" name={staticText.degree} value={formData.degree} className='dropdown_regular' onChange={handleChange}>
                         <option value={staticText.phd}>{staticText.phd}</option>
                         <option value={staticText.masters}>{staticText.masters}</option>
                         <option value={staticText.pgdm}>{staticText.pgdm}</option>
@@ -25,7 +25,7 @@ const EducationDetailForm = ({ staticText, DatePicker, handleModal, handleChange
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.field}</p>
-                    <input id='field' className='input_box_regular' value={formData.field} onChange={handleChange} placeholder={staticText.field} />
+                    <input id='field' className='input_box_regular' name={staticText.field} value={formData.field} onChange={handleChange} placeholder={staticText.field} />
                 </div>
                 <div>
                     <DatePicker id='startDate' staticText={staticText} date={formData.startDate} handleChange={handleChange} />
@@ -34,11 +34,11 @@ const EducationDetailForm = ({ staticText, DatePicker, handleModal, handleChange
                     <DatePicker id='endDate' staticText={staticText} date={formData.endDate} handleChange={handleChange} />
                 </div>
                 <div>
-                    <label><input className='checkbox_regular' type='checkbox' id='presentHere' value={formData.presentHere} onChange={handleChange} /> {staticText.presentHere}</label>
+                    <label><input className='checkbox_regular' type='checkbox' id='presentHere' onChange={handleChange} checked={formData.presentHere} /> {staticText.presentHere}</label>
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.detail}</p>
-                    <textarea id='detail' className='text_area_regular' onChange={handleChange} placeholder={staticText.detail} />
+                    <textarea id='detail' name={staticText.detail} className='text_area_regular' onChange={handleChange} placeholder={staticText.detail} />
                 </div>
                 <div className='box_flex_row_right'>
                     <button id='submit' className='button_regular' onClick={handleSave}>{staticText.save}</button>

@@ -38,9 +38,7 @@ const WithPersonalDetailPage = (container) => {
         const handleSubmit = () => {
             try {
                 container.validator().personalDetails(input)
-                console.log(input)
             } catch (err) {
-                console.log(err)
                 document.getElementById(err.id).style.borderColor = 'red'
             }
 

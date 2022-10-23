@@ -2,33 +2,13 @@ import React, { useState } from "react";
 
 const WithReferenceDetailPage = (container) => {
     return (props) => {
-        const [referenceList, setReferenceList] = useState([{
-            name:"gebfwf",
-            companyName: 'Gurugobind Singh World University',
-            designation: 'Industrial Engineering',
-            mobile: '9999555883',
-            email: 'pnga@gmail.com'
-        },
-        {
-            name:"wbiebvie",
-            companyName: 'Gurugobind Singh World University',
-            designation: 'Industrial Engineering',
-            mobile: '9999555883',
-            email: 'pnga@gmail.com'
-        }])
-        const [formData, setFormData] = useState({ presentHere: false, startDate: {}, endDate: {} })
+        const [referenceList, setReferenceList] = useState([])
+        const [formData, setFormData] = useState({ name: '', companyName: '', designation: '', mobile: '', email: '' })
         const [addReference, setAddReference] = useState(true)
 
         const handleChange = (e) => {
-            const data = formData
-            if (e.target.id.includes('Date')) {
-                data[e.target.id][e.target.name] = e.target.value
-                return setFormData(data)
-            }
-            if (e.target.id == 'presentHere') {
-                data[e.target.id] = !formData.presentHere
-                return setFormData(data)
-            }
+            document.getElementById(e.target.id).style.borderColor = 'black'
+            const data = { ...formData }
             data[e.target.id] = e.target.value
             return setFormData(data)
         }
@@ -38,19 +18,26 @@ const WithReferenceDetailPage = (container) => {
             setAddReference(true)
             return handleDelete(e)
         }
-    
+
         const handleModal = (bool) => {
             return setAddReference(bool)
         }
 
         const handleSave = () => {
-            const list = [...referenceList]
-            list.unshift(formData)
-            setReferenceList(list)
-            return handleModal(false)
+            try {
+                container.validator().addReference(formData)
+                const list = [...referenceList]
+                list.unshift(formData)
+                setReferenceList(list)
+                return handleModal(false)
+            } catch (err) {
+                document.getElementById(err.id).style.borderColor = 'red'
+                window.alert(err.message)
+            }
+
         }
 
-        const handleDelete =(e) =>{
+        const handleDelete = (e) => {
             const list = [...referenceList]
             list.splice(e.target.value, 1)
             return setReferenceList(list)
@@ -63,12 +50,12 @@ const WithReferenceDetailPage = (container) => {
                     referenceList={referenceList}
                     ReferenceDetailForm={container.ReferenceDetailForm}
                     formData={formData}
-                    addReference = {addReference}
+                    addReference={addReference}
                     handleChange={handleChange}
                     handleSave={handleSave}
-                    handleDelete = {handleDelete}
-                    handleModal = {handleModal}
-                    handleEdit = {handleEdit}
+                    handleDelete={handleDelete}
+                    handleModal={handleModal}
+                    handleEdit={handleEdit}
                 />
             </>
         )

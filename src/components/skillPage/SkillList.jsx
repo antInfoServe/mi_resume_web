@@ -1,14 +1,14 @@
 import React from "react";
 import MiResumeLogo from '../../assets/mi_resume_logo.svg'
 
-const SkillList = ({ staticText, useNavigate, skillList, handleRemove, handleAddSkill, handleChange, skill }) => {
+const SkillList = ({ staticText, useNavigate, skillList, handleRemove, handleAddSkill, handleChange, skill, handleOnBlur }) => {
     return (
         <div className="display_reular">
             <div className='box_banner'>
                 <MiResumeLogo />
             </div>
             <div className="box_flex_row">
-                <input className="input_box_small" placeholder={staticText.searchSkill} value={skill} onChange={handleChange} />
+                <input className="input_box_small" placeholder={staticText.searchSkill} value={skill} id = 'searchSkill' name='skill' onBlur={handleOnBlur} onChange={handleChange} />
                 <button className="button_regular" onClick={handleAddSkill}>{staticText.add}</button>
             </div>
             <div className="box_flex_col_left">

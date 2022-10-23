@@ -6,6 +6,7 @@ const EducationDetailList = ({ educationList,
     EducationDetailForm,
     DatePicker,
     handleChange,
+    handleAddEducation,
     formData,
     handleSave,
     handleDelete,
@@ -58,7 +59,7 @@ const EducationDetailList = ({ educationList,
                     ) : <div></div>
                 }
                 <div className="box_flex_row_right">
-                    <button className="button_white" onClick={() => handleModal(true)}>{staticText.add}</button>
+                    <button className="button_white" onClick={handleAddEducation}>{staticText.add}</button>
                     <button className="button_regular">{staticText.submitEducation}</button>
                 </div>
             </div>

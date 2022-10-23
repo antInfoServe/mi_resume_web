@@ -36,16 +36,16 @@ const CourseDetailList = ({ courseList,
                     courseList.length > 0 ? courseList.map((ele, index) =>
                         <div key={index} className="box_card">
                             <div>
-                                <p className='text_label'>{staticText.employerName}</p><p className='text_regular'>{ele.employerName}</p>
+                                <p className='text_label'>{staticText.instituteName}</p><p className='text_regular'>{ele.instituteName}</p>
                             </div>
                             <div>
-                                <p className='text_label'>{staticText.designation}</p><p className='text_regular'>{ele.designation}</p>
+                                <p className='text_label'>{staticText.courseName}</p><p className='text_regular'>{ele.courseName}</p>
                             </div>
                             <div>
                                 <p className='text_label'>{staticText.period}</p><p className='text_regular'>{ele.startDate.month} / {ele.startDate.year} to {ele.presentHere ? "present" : ele.endDate.month + ' / ' + ele.endDate.year}</p>
                             </div>
                             <div>
-                                <p className='text_label'>{staticText.detail}</p><p className='text_regular'>{ele.detail}</p>
+                                <p className='text_label'>{staticText.certificate}</p><p className='text_regular'>{ele.certificate}</p>
                             </div>
                             <div className="box_flex_row_right">
                                 <button id='delete' className='button_white' value = {index}onClick={handleDelete}>{staticText.delete}</button>

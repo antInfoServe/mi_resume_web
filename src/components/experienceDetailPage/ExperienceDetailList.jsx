@@ -48,7 +48,7 @@ const ExperienceDetailList = ({ experienceList,
                                 <p className='text_label'>{staticText.detail}</p><p className='text_regular'>{ele.detail}</p>
                             </div>
                             <div className="box_flex_row_right">
-                                <button id='delete' className='button_white' value = {index}onClick={handleDelete}>{staticText.delete}</button>
+                                <button id='delete' className='button_white' value={index} onClick={handleDelete}>{staticText.delete}</button>
                                 <button value={index} className="button_regular" onClick={handleEdit} >{staticText.edit}</button>
                             </div>
                         </div>

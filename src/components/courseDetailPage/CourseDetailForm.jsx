@@ -26,7 +26,7 @@ const CourseDetailForm = ({ staticText, DatePicker, handleModal, handleChange, h
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.certificate}</p>
-                    <input id='certificate' className='input_box_regular' onChange={handleChange} placeholder={staticText.certificate} />
+                    <input type='url' id='certificate' className='input_box_regular' onChange={handleChange} placeholder={staticText.certificate} value={formData.certificate} />
                 </div>
                 <div className='box_flex_row_right'>
                     <button id='submit' className='button_regular' onClick={handleSave}>{staticText.save}</button>

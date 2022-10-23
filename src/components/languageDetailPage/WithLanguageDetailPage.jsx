@@ -2,27 +2,13 @@ import React, { useState } from "react";
 
 const WithLanguageDetailPage = (container) => {
     return (props) => {
-        const [languageList, setLanguageList] = useState([{
-            language: 'Gurugobind Singh World University',
-            proficiency: 'Industrial Engineering',
-        },
-        {
-            language: 'Gurugobind Singh World University',
-            proficiency: 'Industrial Engineering',
-        }])
-        const [formData, setFormData] = useState({ presentHere: false, startDate: {}, endDate: {} })
+        const [languageList, setLanguageList] = useState([])
+        const [formData, setFormData] = useState({language:'', proficiency:'' })
         const [addLanguage, setAddLanguage] = useState(true)
 
         const handleChange = (e) => {
-            const data = formData
-            if (e.target.id.includes('Date')) {
-                data[e.target.id][e.target.name] = e.target.value
-                return setFormData(data)
-            }
-            if (e.target.id == 'presentHere') {
-                data[e.target.id] = !formData.presentHere
-                return setFormData(data)
-            }
+            document.getElementById(e.target.id).style.borderColor='black'
+            const data = {...formData}
             data[e.target.id] = e.target.value
             return setFormData(data)
         }
@@ -38,10 +24,17 @@ const WithLanguageDetailPage = (container) => {
         }
 
         const handleSave = () => {
-            const list = [...languageList]
-            list.unshift(formData)
-            setLanguageList(list)
-            return handleModal(false)
+            try{
+                container.validator().addLanguage(formData)
+                const list = [...languageList]
+                list.unshift(formData)
+                setLanguageList(list)
+                return handleModal(false)
+            }catch(err){
+                document.getElementById(err.id).style.borderColor = 'red'
+                window.alert(err.message)
+            }
+
         }
 
         const handleDelete =(e) =>{

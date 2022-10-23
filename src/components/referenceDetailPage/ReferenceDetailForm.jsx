@@ -9,11 +9,11 @@ const ReferenceDetailForm = ({ staticText, handleModal, handleChange, handleSave
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.name}</p>
-                    <input id='employerName' value={formData.name} onChange={handleChange} className='input_box_regular' placeholder={staticText.name} />
+                    <input id='name' value={formData.name} onChange={handleChange} className='input_box_regular' placeholder={staticText.name} />
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.companyName}</p>
-                    <input id='designation' className='input_box_regular' value={formData.companyName} onChange={handleChange} placeholder={staticText.companyName} />
+                    <input id='companyName' className='input_box_regular' value={formData.companyName} onChange={handleChange} placeholder={staticText.companyName} />
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.designation}</p>
@@ -21,11 +21,11 @@ const ReferenceDetailForm = ({ staticText, handleModal, handleChange, handleSave
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.mobile}</p>
-                    <input id='designation' className='input_box_regular' value={formData.mobile} onChange={handleChange} placeholder={staticText.mobile} />
+                    <input id='mobile' className='input_box_regular' value={formData.mobile} onChange={handleChange} placeholder={staticText.mobile} />
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.email}</p>
-                    <input id='designation' className='input_box_regular' value={formData.email} onChange={handleChange} placeholder={staticText.email} />
+                    <input id='email' className='input_box_regular' value={formData.email} onChange={handleChange} placeholder={staticText.email} />
                 </div>
                 <div className='box_flex_row_right'>
                     <button id='submit' className='button_regular' onClick={handleSave}>{staticText.save}</button>
