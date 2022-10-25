@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 
 const WithReferenceDetailPage = (container) => {
-    return (props) => {
-        const [referenceList, setReferenceList] = useState([])
+    return ({handleSetResume, resumeData}) => {
+        const [referenceList, setReferenceList] = useState(() => {
+            if(resumeData.reference == undefined){
+                return []
+            }
+            return resumeData.reference
+        })
         const [formData, setFormData] = useState({ name: '', companyName: '', designation: '', mobile: '', email: '' })
         const [addReference, setAddReference] = useState(true)
 
@@ -21,6 +26,11 @@ const WithReferenceDetailPage = (container) => {
 
         const handleModal = (bool) => {
             return setAddReference(bool)
+        }
+
+        const handleAdd = () => {
+            setFormData({ name: '', companyName: '', designation: '', mobile: '', email: '' })
+            handleModal(true)
         }
 
         const handleSave = () => {
@@ -43,6 +53,14 @@ const WithReferenceDetailPage = (container) => {
             return setReferenceList(list)
         }
 
+        const handleSubmit = () => {
+            try{
+                handleSetResume('reference', referenceList)
+            } catch(err){
+                console.log(err.message)
+            }
+        }
+
         return (
             <>
                 <container.ReferenceDetailList
@@ -55,7 +73,9 @@ const WithReferenceDetailPage = (container) => {
                     handleSave={handleSave}
                     handleDelete={handleDelete}
                     handleModal={handleModal}
+                    handleAdd={handleAdd}
                     handleEdit={handleEdit}
+                    handleSubmit={handleSubmit}
                 />
             </>
         )

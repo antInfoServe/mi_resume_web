@@ -6,13 +6,14 @@ const EducationDetailList = ({ educationList,
     EducationDetailForm,
     DatePicker,
     handleChange,
-    handleAddEducation,
+    handleAdd,
     formData,
     handleSave,
     handleDelete,
     handleModal,
     addEducation,
-    handleEdit
+    handleEdit,
+    handleSubmit
 }) => {
     return (
         <div className="display_regular">
@@ -59,8 +60,8 @@ const EducationDetailList = ({ educationList,
                     ) : <div></div>
                 }
                 <div className="box_flex_row_right">
-                    <button className="button_white" onClick={handleAddEducation}>{staticText.add}</button>
-                    <button className="button_regular">{staticText.submitEducation}</button>
+                    <button className="button_white" onClick={handleAdd}>{staticText.add}</button>
+                    <button className="button_regular" onClick={handleSubmit}>{staticText.submitEducation}</button>
                 </div>
             </div>
         </div>

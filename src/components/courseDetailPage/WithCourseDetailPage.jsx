@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 
 const WithCourseDetailPage = (container) => {
-    return (props) => {
-        const [courseList, setCourseList] = useState([])
+    return ({ handleSetResume, resumeData }) => {
+        const [courseList, setCourseList] = useState(() => {
+            if (resumeData.course == undefined) {
+                return []
+            }
+            return resumeData.course
+        })
         const [formData, setFormData] = useState({ instituteName: '', courseName: '', certificate: '', presentHere: false, startDate: {}, endDate: {} })
         const [addCourse, setAddCourse] = useState(true)
 
@@ -38,6 +43,11 @@ const WithCourseDetailPage = (container) => {
             return setAddCourse(bool)
         }
 
+        const handleAdd = () =>{
+            setFormData({ instituteName: '', courseName: '', certificate: '', presentHere: false, startDate: {}, endDate: {} })
+            handleModal(true)
+        }
+
         const handleSave = () => {
             try {
                 container.validator().addCourse(formData)
@@ -58,6 +68,14 @@ const WithCourseDetailPage = (container) => {
             return setCourseList(list)
         }
 
+        const handleSubmit = () => {
+            try {
+                handleSetResume('course', courseList)
+            } catch (err) {
+                console.log(err.message)
+            }
+        }
+
         return (
             <>
                 <container.CourseDetailList
@@ -71,7 +89,9 @@ const WithCourseDetailPage = (container) => {
                     handleSave={handleSave}
                     handleDelete={handleDelete}
                     handleModal={handleModal}
+                    handleAdd={handleAdd}
                     handleEdit={handleEdit}
+                    handleSubmit={handleSubmit}
                 />
             </>
         )

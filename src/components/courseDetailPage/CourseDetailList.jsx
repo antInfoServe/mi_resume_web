@@ -10,8 +10,10 @@ const CourseDetailList = ({ courseList,
     handleSave,
     handleDelete,
     handleModal,
+    handleAdd,
     addCourse,
-    handleEdit
+    handleEdit,
+    handleSubmit
 }) => {
     return (
         <div className="display_regular">
@@ -55,8 +57,8 @@ const CourseDetailList = ({ courseList,
                     ) : <div></div>
                 }
                 <div className="box_flex_row_right">
-                    <button className="button_white" onClick={() => handleModal(true)}>{staticText.add}</button>
-                    <button className="button_regular">{staticText.submit}</button>
+                    <button className="button_white" onClick={handleAdd}>{staticText.add}</button>
+                    <button className="button_regular" onClick={handleSubmit}>{staticText.submit}</button>
                 </div>
             </div>
         </div>

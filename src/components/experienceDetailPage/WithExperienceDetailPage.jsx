@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 
 const WithExperienceDetailPage = (container) => {
-    return (props) => {
-        const [experienceList, setExperienceList] = useState([])
+    return ({ handleSetResume, resumeData }) => {
+        const [experienceList, setExperienceList] = useState(() => {
+            if (resumeData.experience == undefined) {
+                return []
+            }
+            return resumeData.experience
+        })
         const [formData, setFormData] = useState({ employerName: '', designation: '', workHere: false, startDate: {}, endDate: {}, detail: '' })
         const [addExperience, setAddExperience] = useState(true)
 
@@ -38,6 +43,11 @@ const WithExperienceDetailPage = (container) => {
             return setAddExperience(bool)
         }
 
+        const handleAdd = () =>{
+            setFormData({ employerName: '', designation: '', workHere: false, startDate: {}, endDate: {}, detail: '' })
+            handleModal(true)
+        }
+
         const handleSave = () => {
             try {
                 container.validator().addExperience(formData)
@@ -57,6 +67,14 @@ const WithExperienceDetailPage = (container) => {
             return setExperienceList(list)
         }
 
+        const handleSubmit = () => {
+            try {
+                handleSetResume('experience',experienceList)
+            } catch (err) {
+                console.log
+            }
+        }
+
         return (
             <>
                 <container.ExperienceDetailList
@@ -70,7 +88,9 @@ const WithExperienceDetailPage = (container) => {
                     handleSave={handleSave}
                     handleDelete={handleDelete}
                     handleModal={handleModal}
+                    handleAdd={handleAdd}
                     handleEdit={handleEdit}
+                    handleSubmit={handleSubmit}
                 />
             </>
         )

@@ -10,8 +10,10 @@ const ExperienceDetailList = ({ experienceList,
     handleSave,
     handleDelete,
     handleModal,
+    handleAdd,
     addExperience,
-    handleEdit
+    handleEdit,
+    handleSubmit
 }) => {
     return (
         <div className="display_regular">
@@ -55,8 +57,8 @@ const ExperienceDetailList = ({ experienceList,
                     ) : <div></div>
                 }
                 <div className="box_flex_row_right">
-                    <button className="button_white" onClick={() => handleModal(true)}>{staticText.add}</button>
-                    <button className="button_regular">{staticText.submitExperience}</button>
+                    <button className="button_white" onClick={handleAdd}>{staticText.add}</button>
+                    <button className="button_regular" onClick={handleSubmit}>{staticText.submitExperience}</button>
                 </div>
             </div>
         </div>

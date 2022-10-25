@@ -65,7 +65,7 @@ class Validator {
         if (pincode == "" || pincode == undefined) {
             return
         }
-        const regex = /^\d{7}$/
+        const regex = /^\d{6}$/
         if (!regex.test(pincode)) {
             this.error = new Error("please enter a valid pincode")
             this.error.id = 'pincode'
@@ -103,7 +103,6 @@ class Validator {
         this.email(email)
         this.city(city)
         this.pincode(pincode)
-        return true
     }
 
     addEducation({ universityName, degree, field, startDate, endDate, presentHere }) {

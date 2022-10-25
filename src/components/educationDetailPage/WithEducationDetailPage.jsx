@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 
 const WithEducationDetailPage = (container) => {
-    return (props) => {
-        const [educationList, setEducationList] = useState([])
+    return ({ handleSetResume, resumeData }) => {
+        
+        const [educationList, setEducationList] = useState(() => {
+            if (resumeData.education == undefined) {
+                return []
+            }
+            return resumeData.education
+        })
+        
         const [formData, setFormData] = useState({ universityName: '', degree: container.staticText.phd, field: '', presentHere: false, startDate: {}, endDate: {}, detail: '' })
         const [addEducation, setAddEducation] = useState(true)
 
@@ -14,7 +21,7 @@ const WithEducationDetailPage = (container) => {
                 return setFormData(data)
             }
 
-            if (e.target.id.includes('startDate')) {
+            if (e.target.id.includes('endDate')) {
                 data.endDate[e.target.name] = e.target.value
                 return setFormData(data)
             }
@@ -38,8 +45,8 @@ const WithEducationDetailPage = (container) => {
             return setAddEducation(bool)
         }
 
-        const handleAddEducation = () => {
-            setFormData({ presentHere: false, startDate: {}, endDate: {} })
+        const handleAdd = () => {
+            setFormData({ universityName: '', degree: container.staticText.phd, field: '', presentHere: false, startDate: {}, endDate: {}, detail: '' })
             return handleModal(true)
         }
 
@@ -47,7 +54,7 @@ const WithEducationDetailPage = (container) => {
             try {
                 const list = [...educationList]
                 container.validator().addEducation(formData)
-                list.push(formData)
+                list.unshift(formData)
                 setEducationList(list)
                 return handleModal(false)
             } catch (err) {
@@ -62,6 +69,14 @@ const WithEducationDetailPage = (container) => {
             return setEducationList(list)
         }
 
+        const handleSubmit = () => {
+            try {
+                handleSetResume('education', educationList)
+            } catch (err) {
+                console.log(err.message)
+            }
+        }
+
         return (
             <>
                 <container.EducationDetailList
@@ -71,12 +86,13 @@ const WithEducationDetailPage = (container) => {
                     DatePicker={container.DatePicker}
                     formData={formData}
                     addEducation={addEducation}
-                    handleAddEducation={handleAddEducation}
+                    handleAdd={handleAdd}
                     handleChange={handleChange}
                     handleSave={handleSave}
                     handleDelete={handleDelete}
                     handleModal={handleModal}
                     handleEdit={handleEdit}
+                    handleSubmit={handleSubmit}
                 />
             </>
         )

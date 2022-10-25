@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
 
 const WithSkillPage = (container) => {
-    return (props) => {
-        const [skill, setSkill] = useState('')
-        const [skillList, setSkillList] = useState([])
+    return ({handleSetResume, resumeData}) => {
 
-        const handleOnBlur = (e) => {
-            try {
-                container.validator().notEmpty(e)
-            } catch (err) {
-                document.getElementById(err.id).style.borderColor = 'red'
-                window.alert(err.message)
+        const [skillList, setSkillList] = useState(() =>{
+            if(resumeData.skill == undefined){
+                return[]
             }
-        }
+            return resumeData.skill
+        })
+
+        const [skill, setSkill] = useState('')
 
         const handleChange = (e) => {
             document.getElementById(e.target.id).style.borderColor = 'black'
@@ -37,6 +35,14 @@ const WithSkillPage = (container) => {
             setSkillList(list)
         }
 
+        const handleSubmit = () =>{
+            try{
+                handleSetResume('skill', skillList)
+            }catch(err){
+                console.log(err.message)
+            }
+        }
+
         return (
             <>
                 <container.SkillList
@@ -45,9 +51,9 @@ const WithSkillPage = (container) => {
                     skillList={skillList}
                     skill={skill}
                     handleChange={handleChange}
-                    handleOnBlur={handleOnBlur}
                     handleAddSkill={handleAddSkill}
                     handleRemove={handleRemove}
+                    handleSubmit={handleSubmit}
                 />
             </>
         )
