@@ -12,6 +12,7 @@ import SkillPage from "./provider/skillPageProvider";
 import CourseDetailPage from "./provider/courseDetailPageProvider";
 import LanguageDetailPage from "./provider/languageDetailPageProvider";
 import ReferenceDetailPage from "./provider/referenceDetailPageProvider";
+import AwardDetailPage from './provider/awardDetailPageProvider'
 
 import "./stylesheets/app.css";
 
@@ -56,6 +57,7 @@ const App = () => {
             <Route path="/course" element={<CourseDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />
             <Route path='/language' element={<LanguageDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />
             <Route path='/reference' element={<ReferenceDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />
+            <Route path='/award' element={<AwardDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />
           </Routes>
         </BrowserRouter>
       </div>

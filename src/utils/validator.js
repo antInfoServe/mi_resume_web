@@ -155,5 +155,11 @@ class Validator {
         this.isEmpty(email, 'email', this.staticText.email)
         return true
     }
+
+    addAward({issuer, title, issueDate}){
+        this.isEmpty(issuer, 'issuer', this.staticText.issuer)
+        this.isEmpty(title, 'title', this.staticText.title)
+        this.isDateEmpty(issueDate, 'issueDate', this.staticText.issueDate)
+    }
 }
 export default validatorFactory

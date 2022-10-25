@@ -64,7 +64,10 @@ const staticText = {
   beginner:"beginner",
   intermediate:"intermediate",
   expert:"expert",
-  companyName:"company name"
+  companyName:"company name",
+  issuer:"issuer (or institute name)",
+  title:"award title",
+  issueDate:"issue date"
 };
 
 export default staticText;
