@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const WithPersonalDetailPage = (container) => {
     return ({ handleSetResume, resumeData }) => {
-        
+
         const [formData, setFormData] = useState(() => {
             if (resumeData.personal == undefined) {
                 return { name: "", mobile: "", email: "", city: "", pincode: "" }
@@ -22,7 +22,9 @@ const WithPersonalDetailPage = (container) => {
             try {
                 container.validator().personalDetails(formData)
                 handleSetResume('personal', formData)
+                window.location.href = '/education'
             } catch (err) {
+                console.log(err)
                 document.getElementById(err.id).style.borderColor = 'red'
             }
 

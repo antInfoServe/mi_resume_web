@@ -11,7 +11,7 @@ import SocialLinkPage from "./provider/socialLinkPageProvider";
 import SkillPage from "./provider/skillPageProvider";
 import CourseDetailPage from "./provider/courseDetailPageProvider";
 import LanguageDetailPage from "./provider/languageDetailPageProvider";
-import ReferenceDetailPage from "./provider/experienceDetailPageProvider copy";
+import ReferenceDetailPage from "./provider/referenceDetailPageProvider";
 
 import "./stylesheets/app.css";
 

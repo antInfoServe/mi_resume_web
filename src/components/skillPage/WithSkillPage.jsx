@@ -38,6 +38,7 @@ const WithSkillPage = (container) => {
         const handleSubmit = () =>{
             try{
                 handleSetResume('skill', skillList)
+                return window.location.href = '/menu'
             }catch(err){
                 console.log(err.message)
             }

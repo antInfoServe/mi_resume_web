@@ -70,6 +70,7 @@ const WithExperienceDetailPage = (container) => {
         const handleSubmit = () => {
             try {
                 handleSetResume('experience',experienceList)
+                return window.location.href = '/menu'
             } catch (err) {
                 console.log
             }

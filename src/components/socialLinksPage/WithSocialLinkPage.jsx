@@ -18,6 +18,7 @@ const WithSocialLinkPage = (container) => {
         const handleSubmit = () =>{
             try{
                 handleSetResume('socialLink', formData)
+                return window.location.href = '/menu'
             } catch(err){
                 console.log(err.message)
             }

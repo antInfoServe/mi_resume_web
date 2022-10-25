@@ -71,6 +71,7 @@ const WithCourseDetailPage = (container) => {
         const handleSubmit = () => {
             try {
                 handleSetResume('course', courseList)
+                return window.location.href = '/menu'
             } catch (err) {
                 console.log(err.message)
             }

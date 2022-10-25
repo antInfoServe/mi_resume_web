@@ -5,11 +5,15 @@ import PersonalDetailForm from "../components/personalDetailPage/PersonalDetailF
 import staticText from "../utils/staticText";
 import validatorFactory from "../utils/validator";
 
+import { useNavigate } from "react-router-dom";
+
+
 const c = new Container()
 
 c.setComponent('PersonalDetailForm', PersonalDetailForm)
 c.setComponent('staticText', staticText)
 c.setInternalModule('validator', validatorFactory)
+c.setExternalModule('useNavigate', useNavigate)
 
 const PersonalDetailPage = WithPersonalDetailPage(c.getContainer())
 

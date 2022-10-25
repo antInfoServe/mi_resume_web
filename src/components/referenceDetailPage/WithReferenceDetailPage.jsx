@@ -56,6 +56,7 @@ const WithReferenceDetailPage = (container) => {
         const handleSubmit = () => {
             try{
                 handleSetResume('reference', referenceList)
+                return window.location.href = '/menu'
             } catch(err){
                 console.log(err.message)
             }

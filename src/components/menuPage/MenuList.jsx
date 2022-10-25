@@ -2,6 +2,7 @@ import React from "react";
 import MiResumeLogo from '../../assets/mi_resume_logo.svg'
 
 const MenuList = ({ staticText, useNavigate }) => {
+    const navigate = useNavigate()
     return (
         <div className="display_reguar">
             <div className="box_banner">
@@ -10,17 +11,17 @@ const MenuList = ({ staticText, useNavigate }) => {
             <div className="box_flex_col_left">
                 {
                     [
-                        "profileDetail",
-                        "educationDetail",
-                        "experienceDetail",
+                        "personal",
+                        "education",
+                        "experience",
                         "socialLink",
                         "skill",
-                        "courseDetail",
-                        "awardDetail",
+                        "course",
+                        "award",
                         "language",
                         "reference"
                     ].map((ele, index) =>
-                        <button className="button_regular" id={ele} key={index}>{staticText[ele]}</button>
+                        <button className="button_regular" id={ele} onClick={() => navigate(`/${ele}`)} key={index}>{staticText[ele]}</button>
                     )
                 }
             </div>

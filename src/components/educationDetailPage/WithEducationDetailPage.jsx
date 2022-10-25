@@ -72,6 +72,7 @@ const WithEducationDetailPage = (container) => {
         const handleSubmit = () => {
             try {
                 handleSetResume('education', educationList)
+                return window.location.href = '/experience'
             } catch (err) {
                 console.log(err.message)
             }
