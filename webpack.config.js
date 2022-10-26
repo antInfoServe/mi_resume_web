@@ -51,10 +51,6 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [{ from: "./src/assets", to: "./assets" }],
-    }),
-    new InjectManifest({
-      swSrc: "./src/sw.js",
-      swDest: "sw.js",
-    }),
+    })
   ],
 };

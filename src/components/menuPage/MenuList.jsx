@@ -4,7 +4,7 @@ import MiResumeLogo from '../../assets/mi_resume_logo.svg'
 const MenuList = ({ staticText, useNavigate }) => {
     const navigate = useNavigate()
     return (
-        <div className="display_reguar">
+        <div className="display_regular">
             <div className="box_banner">
                 <MiResumeLogo />
             </div>
