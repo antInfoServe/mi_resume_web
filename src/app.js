@@ -21,7 +21,7 @@ const App = () => {
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('resume'))
-    if (Object.keys(data).length > 0) {
+    if (data != null && Object.keys(data).length > 0) {
       return setResume({ ...data })
     }
     return setResume({})

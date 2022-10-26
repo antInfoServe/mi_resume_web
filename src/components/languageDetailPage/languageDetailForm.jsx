@@ -8,8 +8,8 @@ const LanguageDetailForm = ({ staticText, handleModal, handleChange, handleSave,
                     <button className='button_link' onClick={() => handleModal(false)}>{staticText.closeModal}</button>
                 </div>
                 <div>
-                    <p className='text_regular'>{staticText.language}</p>
-                    <input id='language' value={formData.language} onChange={handleChange} className='input_box_regular' placeholder={staticText.kanguage} />
+                    <p className='text_regular'>{staticText.language_label}</p>
+                    <input id='language' value={formData.language} onChange={handleChange} className='input_box_regular' placeholder={staticText.language_label} />
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.proficiency}</p>

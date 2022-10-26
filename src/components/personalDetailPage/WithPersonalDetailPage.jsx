@@ -24,7 +24,6 @@ const WithPersonalDetailPage = (container) => {
                 handleSetResume('personal', formData)
                 window.location.href = '/education'
             } catch (err) {
-                console.log(err)
                 document.getElementById(err.id).style.borderColor = 'red'
             }
 

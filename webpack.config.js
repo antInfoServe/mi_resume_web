@@ -29,10 +29,10 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"],
   },
-  // optimization:{
-  //   minimize: true,
-  //   minimizer: [new TerserPlugin()]
-  // },
+  optimization:{
+    minimize: true,
+    minimizer: [new TerserPlugin()]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: __dirname + "/src/index.html",

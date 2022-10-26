@@ -59,7 +59,7 @@ const staticText = {
   instituteName:"institute name",
   courseName:"course name",
   certificate:"certificate link",
-  language:"language",
+  language_label:"language",
   proficiency:"proficiency",
   beginner:"beginner",
   intermediate:"intermediate",
