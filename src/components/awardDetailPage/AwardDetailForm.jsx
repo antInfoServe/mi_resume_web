@@ -20,7 +20,7 @@ const AwardDetailForm = ({ staticText, DatePicker, handleModal, handleChange, ha
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.detail}</p>
-                    <textarea id='detail' name={staticText.detail} className='text_area_regular' onChange={handleChange} placeholder={staticText.detail} />
+                    <textarea id='detail' name={staticText.detail} className='text_area_regular' value={formData.detail} onChange={handleChange} placeholder={staticText.detail} />
                 </div>
                 <div className='box_flex_row_right'>
                     <button id='submit' className='button_regular' onClick={handleSave}>{staticText.save}</button>

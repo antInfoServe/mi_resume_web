@@ -51,7 +51,7 @@ const App = () => {
             <Route path="/personal" element={<PersonalDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />
             <Route path="/education" element={<EducationDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />
             <Route path="/experience" element={<ExperienceDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />
-            <Route path='/menu' element={<MenuPage />} />
+            <Route path='/menu' element={<MenuPage resumeData={resume}/>} />
             <Route path='/socialLink' element={<SocialLinkPage handleSetResume={handleSetResume} resumeData={resume} />} />
             <Route path="/skill" element={<SkillPage handleSetResume={handleSetResume} resumeData={resume} />} />
             <Route path="/course" element={<CourseDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />

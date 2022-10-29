@@ -52,7 +52,10 @@ const WithExperienceDetailPage = (container) => {
             try {
                 container.validator().addExperience(formData)
                 const list = [...experienceList]
-                list.push(formData)
+                const data = formData
+                data.detail = container.parser().stringToArray(data.detail)
+                console.log(data.detail)
+                list.unshift(data)
                 setExperienceList(list)
                 return handleModal(false)
             } catch (err) {

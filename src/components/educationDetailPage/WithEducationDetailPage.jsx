@@ -52,9 +52,11 @@ const WithEducationDetailPage = (container) => {
 
         const handleSave = () => {
             try {
-                const list = [...educationList]
                 container.validator().addEducation(formData)
-                list.unshift(formData)
+                const list = [...educationList]
+                const data = formData
+                data.detail = container.parser().stringToArray(data.detail)
+                list.unshift(data)
                 setEducationList(list)
                 return handleModal(false)
             } catch (err) {

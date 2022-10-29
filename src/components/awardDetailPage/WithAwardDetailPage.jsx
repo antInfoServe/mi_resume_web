@@ -50,7 +50,10 @@ const WithAwardDetailPage = (container) => {
             try {
                 const list = [...awardList]
                 container.validator().addAward(formData)
-                list.unshift(formData)
+                const data = formData
+                data.detail = container.parser().stringToArray(data.detail)
+                console.log(data.detail)
+                list.unshift(data)
                 setAwardList(list)
                 return handleModal(false)
             } catch (err) {

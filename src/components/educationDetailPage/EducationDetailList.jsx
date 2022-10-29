@@ -50,10 +50,13 @@ const EducationDetailList = ({ educationList,
                                 <p className='text_label'>{staticText.period}</p><p className='text_regular'>{ele.startDate.month} / {ele.startDate.year} to {ele.presentHere ? "present" : ele.endDate.month + ' / ' + ele.endDate.year}</p>
                             </div>
                             <div>
-                                <p className='text_label'>{staticText.detail}</p><p className='text_regular'>{ele.detail}</p>
+                                <p className="text_label">{staticText.detail}</p>
+                                {
+                                    ele.detail.map((e, index) => <p key={index} className='text_regular'>● {e}</p>)
+                                }
                             </div>
                             <div className="box_flex_row_right">
-                                <button id='delete' className='button_white' value = {index}onClick={handleDelete}>{staticText.delete}</button>
+                                <button id='delete' className='button_white' value={index} onClick={handleDelete}>{staticText.delete}</button>
                                 <button value={index} className="button_regular" onClick={handleEdit} >{staticText.edit}</button>
                             </div>
                         </div>

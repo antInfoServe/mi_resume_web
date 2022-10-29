@@ -21,12 +21,12 @@ const staticText = {
   delete: "delete",
   submitEducation: "next:experience",
   phd: "Phd/Doctors",
-  masters: "masters(MA, ME, MS, MBA, etc.)",
-  pgdm: "post-graduate diploma",
-  graduation: "graduation",
-  diploma: "diploma",
+  masters: "Masters",
+  pgdm: "Post-graduate diploma",
+  graduation: "Graduation",
+  diploma: "Diploma",
   tenthPlusTwo: "10 +2",
-  tenth: "metric",
+  tenth: "Metric",
   edit: "edit",
   month: "month",
   year: "year",
@@ -61,13 +61,14 @@ const staticText = {
   certificate:"certificate link",
   language_label:"language",
   proficiency:"proficiency",
-  beginner:"beginner",
-  intermediate:"intermediate",
-  expert:"expert",
+  beginner:"Beginner",
+  intermediate:"Intermediate",
+  expert:"Expert",
   companyName:"company name",
   issuer:"issuer (or institute name)",
   title:"award title",
-  issueDate:"issue date"
+  issueDate:"issue date",
+  download: "download resume"
 };
 
 export default staticText;

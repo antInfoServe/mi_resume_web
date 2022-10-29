@@ -1,14 +1,15 @@
 const parserFactory = (container) => new Parser(container)
 
 class Parser {
-    constructor(con) {
+    constructor(container) {
 
     }
 
     stringToArray(str) {
-        if(typeof str !== "string")return str
-        str = str.replace(/\,,+/gm, ',').replace(/\,+$/gm, "")
-        const array = str.split(',')
+        console.log(str.length)
+        if(str.length < 1)return[]
+        str = str.replace(/\n+$/gm, "").replace(/\n+/gm, '|')
+        const array = str.split('|')
         return array.map(ele => ele.trim())
     }
 }

@@ -26,7 +26,7 @@ const ExperienceDetailForm = ({ staticText, DatePicker, handleModal, handleChang
                 </div>
                 <div>
                     <p className='text_regular'>{staticText.detail}</p>
-                    <textarea id='detail' className='text_area_regular' onChange={handleChange} placeholder={staticText.detail} />
+                    <textarea id='detail' className='text_area_regular' onChange={handleChange} placeholder={staticText.detail} value={formData.detail} />
                 </div>
                 <div className='box_flex_row_right'>
                     <button id='submit' className='button_regular' onClick={handleSave}>{staticText.save}</button>
