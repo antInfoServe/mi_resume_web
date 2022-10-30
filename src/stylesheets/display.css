@@ -1,4 +1,5 @@
 .display_regular{
     width: var(--app-width);
+    overflow-y: auto;
 }
 

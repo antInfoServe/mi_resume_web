@@ -3,12 +3,12 @@ import React, { useState } from "react";
 const WithCourseDetailPage = (container) => {
     return ({ handleSetResume, resumeData }) => {
         const [courseList, setCourseList] = useState(() => {
-            if (resumeData.course == undefined) {
+            if (resumeData.course.length === 0) {
                 return []
             }
             return resumeData.course
         })
-        const [formData, setFormData] = useState({ instituteName: '', courseName: '', certificate: '', presentHere: false, startDate: {}, endDate: {} })
+        const [formData, setFormData] = useState({ instituteName: '', courseName: '', certificate: '', presentHere: false, startDate: { month: 1, year: 2022 }, endDate: { month: 1, year: 2022 } })
         const [addCourse, setAddCourse] = useState(true)
 
         const handleChange = (e) => {
@@ -43,8 +43,8 @@ const WithCourseDetailPage = (container) => {
             return setAddCourse(bool)
         }
 
-        const handleAdd = () =>{
-            setFormData({ instituteName: '', courseName: '', certificate: '', presentHere: false, startDate: {}, endDate: {} })
+        const handleAdd = () => {
+            setFormData({ instituteName: '', courseName: '', certificate: '', presentHere: false, startDate: { month: 1, year: 2022 }, endDate: { month: 1, year: 2022 } })
             handleModal(true)
         }
 
@@ -70,7 +70,7 @@ const WithCourseDetailPage = (container) => {
 
         const handleMove = (e) => {
             let arr = [...courseList]
-            if(e.target.name === 'moveUp'){
+            if (e.target.name === 'moveUp') {
                 arr = container.relocator().moveUp(arr, e.target.id)
                 return setCourseList(arr)
             }

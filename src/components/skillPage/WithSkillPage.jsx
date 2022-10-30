@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
 const WithSkillPage = (container) => {
-    return ({handleSetResume, resumeData}) => {
+    return ({ handleSetResume, resumeData }) => {
 
-        const [skillList, setSkillList] = useState(() =>{
-            if(resumeData.skill == undefined){
-                return[]
+        const [skillList, setSkillList] = useState(() => {
+            if (resumeData.skill.length === 0) {
+                return []
             }
             return resumeData.skill
         })
@@ -35,11 +35,11 @@ const WithSkillPage = (container) => {
             setSkillList(list)
         }
 
-        const handleSubmit = () =>{
-            try{
+        const handleSubmit = () => {
+            try {
                 handleSetResume('skill', skillList)
                 return window.location.href = '/menu'
-            }catch(err){
+            } catch (err) {
                 console.log(err.message)
             }
         }

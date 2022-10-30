@@ -4,7 +4,7 @@ const WithPersonalDetailPage = (container) => {
     return ({ handleSetResume, resumeData }) => {
 
         const [formData, setFormData] = useState(() => {
-            if (resumeData.personal == undefined) {
+            if (Object.keys(resumeData.personal).length === 0) {
                 return { name: "", mobile: "", email: "", city: "", pincode: "" }
             }
             return resumeData.personal

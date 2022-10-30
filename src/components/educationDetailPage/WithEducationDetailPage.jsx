@@ -4,13 +4,13 @@ const WithEducationDetailPage = (container) => {
     return ({ handleSetResume, resumeData }) => {
 
         const [educationList, setEducationList] = useState(() => {
-            if (resumeData.education == undefined) {
+            if (resumeData.education.length === 0) {
                 return []
             }
             return resumeData.education
         })
 
-        const [formData, setFormData] = useState({ universityName: '', degree: container.staticText.phd, field: '', presentHere: false, startDate: {}, endDate: {}, detail: '' })
+        const [formData, setFormData] = useState({ universityName: '', degree: container.staticText.phd, field: '', presentHere: false, startDate: { month: 1, year: 2022 }, endDate: { month: 1, year: 2022 }, detail: '' })
         const [addEducation, setAddEducation] = useState(true)
 
         const handleChange = (e) => {
@@ -46,7 +46,7 @@ const WithEducationDetailPage = (container) => {
         }
 
         const handleAdd = () => {
-            setFormData({ universityName: '', degree: container.staticText.phd, field: '', presentHere: false, startDate: {}, endDate: {}, detail: '' })
+            setFormData({ universityName: '', degree: container.staticText.phd, field: '', presentHere: false, startDate: { month: 1, year: 2022 }, endDate: { month: 1, year: 2022 }, detail: '' })
             return handleModal(true)
         }
 

@@ -32,6 +32,7 @@ const App = () => {
       "skill": [],
       "course": [],
       "language": [],
+      "award":[],
       "reference": []
   })
   }, [])

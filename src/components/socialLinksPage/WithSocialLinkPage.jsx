@@ -1,25 +1,25 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 const WithSocialLinkPage = (container) => {
-    return ({handleSetResume, resumeData}) => {
-        const[formData, setFormData] = useState(()=>{
-            if(resumeData.socialLink == undefined){
-                return{linkedin:'', instagram:'', facebook:'', github:'', portfolio:''}
+    return ({ handleSetResume, resumeData }) => {
+        const [formData, setFormData] = useState(() => {
+            if (Object.keys(resumeData.socialLink).length === 0) {
+                return { linkedin: '', instagram: '', facebook: '', github: '', portfolio: '' }
             }
             return resumeData.socialLink
         })
 
         const handleChange = (e) => {
-            const data = {...formData}
+            const data = { ...formData }
             data[e.target.id] = e.target.value
             return setFormData(data)
         }
 
-        const handleSubmit = () =>{
-            try{
+        const handleSubmit = () => {
+            try {
                 handleSetResume('socialLink', formData)
                 return window.location.href = '/menu'
-            } catch(err){
+            } catch (err) {
                 console.log(err.message)
             }
         }

@@ -4,13 +4,13 @@ const WithAwardDetailPage = (container) => {
     return ({ handleSetResume, resumeData }) => {
 
         const [awardList, setAwardList] = useState(() => {
-            if (resumeData.award == undefined) {
+            if (resumeData.award.length === 0) {
                 return []
             }
             return resumeData.award
         })
 
-        const [formData, setFormData] = useState({ issuer: '', title: "", issueDate: {}, detail: "" })
+        const [formData, setFormData] = useState({ issuer: '', title: "", issueDate: { month: 1, year: 2022 }, detail: "" })
         const [addAward, setAddAward] = useState(true)
 
         const handleChange = (e) => {
@@ -42,7 +42,7 @@ const WithAwardDetailPage = (container) => {
         }
 
         const handleAdd = () => {
-            setFormData({ issuer: '', title: "", issueDate: {}, detail: "" })
+            setFormData({ issuer: '', title: "", issueDate: { month: 1, year: 2022 }, detail: "" })
             return handleModal(true)
         }
 

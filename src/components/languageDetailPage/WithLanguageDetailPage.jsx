@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const WithLanguageDetailPage = (container) => {
     return ({ handleSetResume, resumeData }) => {
         const [languageList, setLanguageList] = useState(() => {
-            if (resumeData.language == undefined) {
+            if (resumeData.language.length === 0) {
                 return []
             }
             return resumeData.language

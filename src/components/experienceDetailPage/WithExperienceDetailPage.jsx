@@ -3,12 +3,12 @@ import React, { useState } from "react";
 const WithExperienceDetailPage = (container) => {
     return ({ handleSetResume, resumeData }) => {
         const [experienceList, setExperienceList] = useState(() => {
-            if (resumeData.experience == undefined) {
+            if (resumeData.experience.length === 0) {
                 return []
             }
             return resumeData.experience
         })
-        const [formData, setFormData] = useState({ employerName: '', designation: '', workHere: false, startDate: {}, endDate: {}, detail: '' })
+        const [formData, setFormData] = useState({ employerName: '', designation: '', workHere: false, startDate: { month: 1, year: 2022 }, endDate: { month: 1, year: 2022 }, detail: '' })
         const [addExperience, setAddExperience] = useState(true)
 
         const handleChange = (e) => {
@@ -44,7 +44,7 @@ const WithExperienceDetailPage = (container) => {
         }
 
         const handleAdd = () => {
-            setFormData({ employerName: '', designation: '', workHere: false, startDate: {}, endDate: {}, detail: '' })
+            setFormData({ employerName: '', designation: '', workHere: false, startDate: { month: 1, year: 2022 }, endDate: { month: 1, year: 2022 }, detail: '' })
             handleModal(true)
         }
 

@@ -55,7 +55,7 @@ const staticText = {
   portfolio: "portfolio",
   searchSkill:"search skills",
   remove:"X remove",
-  add:"add +",
+  add:"add new +",
   instituteName:"institute name",
   courseName:"course name",
   certificate:"certificate link",

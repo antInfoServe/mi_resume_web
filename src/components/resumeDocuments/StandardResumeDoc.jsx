@@ -71,13 +71,15 @@ const StandardResumeDoc = ({ resumeData }) => (
                 </View>
                 <View style={style.subSection}>
                     <Text style={style.body}>{resumeData.personal.mobile}, {resumeData.personal.email}</Text>
-                    <Text style={style.body}>
-                        {resumeData.socialLink.linkedin ? resumeData.socialLink.linkedin + ", " : null}
-                        {resumeData.socialLink.facebook ? resumeData.socialLink.facebook + ", " : null}
-                        {resumeData.socialLink.instagram ? resumeData.socialLink.instagram + ", " : null}
-                        {resumeData.socialLink.github ? resumeData.socialLink.github + ", " : null}
-                        {resumeData.socialLink.portfolio ? resumeData.socialLink.portfolio : null}
-                    </Text>
+                    {
+                        resumeData.socialLink ? <Text style={style.body}>
+                            {resumeData.socialLink.linkedin ? resumeData.socialLink.linkedin + ", " : null}
+                            {resumeData.socialLink.facebook ? resumeData.socialLink.facebook + ", " : null}
+                            {resumeData.socialLink.instagram ? resumeData.socialLink.instagram + ", " : null}
+                            {resumeData.socialLink.github ? resumeData.socialLink.github + ", " : null}
+                            {resumeData.socialLink.portfolio ? resumeData.socialLink.portfolio : null}
+                        </Text> : null
+                    }
                 </View>
             </View>
             <View style={style.hr}></View>
