@@ -29,7 +29,7 @@ const WithLanguageDetailPage = (container) => {
             return setAddLanguage(bool)
         }
 
-        const handleAdd = () =>{
+        const handleAdd = () => {
             setFormData({ language: '', proficiency: '' })
             handleModal(true)
         }
@@ -51,6 +51,16 @@ const WithLanguageDetailPage = (container) => {
             const list = [...languageList]
             list.splice(e.target.value, 1)
             return setLanguageList(list)
+        }
+
+        const handleMove = (e) => {
+            let arr = [...languageList]
+            if (e.target.name === 'moveUp') {
+                arr = container.relocator().moveUp(arr, e.target.id)
+                return setLanguageList(arr)
+            }
+            arr = container.relocator().moveDown(arr, e.target.id)
+            return setLanguageList(arr)
         }
 
         const handleSubmit = () => {
@@ -76,6 +86,7 @@ const WithLanguageDetailPage = (container) => {
                     handleModal={handleModal}
                     handleAdd={handleAdd}
                     handleEdit={handleEdit}
+                    handleMove={handleMove}
                     handleSubmit={handleSubmit}
                 />
             </>

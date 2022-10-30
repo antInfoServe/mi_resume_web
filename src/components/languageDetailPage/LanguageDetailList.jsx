@@ -12,6 +12,7 @@ const LanguageDetailList = ({ languageList,
     handleAdd,
     addLanguage,
     handleEdit,
+    handleMove,
     handleSubmit
 }) => {
     return (
@@ -31,6 +32,10 @@ const LanguageDetailList = ({ languageList,
                 }
             </div>
             <div className="box_flex_col_left">
+                <div className="box_flex_row_right">
+                    <button className="button_white" onClick={handleAdd}>{staticText.add}</button>
+                    <button className="button_regular" onClick={handleSubmit}>{staticText.submit}</button>
+                </div>
                 {
                     //languageDetailCard
                     languageList.length > 0 ? languageList.map((ele, index) =>
@@ -42,16 +47,14 @@ const LanguageDetailList = ({ languageList,
                                 <p className='text_label'>{staticText.proficiency}</p><p className='text_regular'>{ele.proficiency}</p>
                             </div>
                             <div className="box_flex_row_right">
-                                <button id='delete' className='button_white' value = {index}onClick={handleDelete}>{staticText.delete}</button>
+                                {index > 0 ? <button className="button_white" name="moveUp" id={index} onClick={handleMove}>↑</button> : null}
+                                {index < languageList.length - 1 ? <button className="button_white" name="moveDown" id={index} onClick={handleMove}>↓</button> : null}
+                                <button id='delete' className='button_white' value={index} onClick={handleDelete}>{staticText.delete}</button>
                                 <button value={index} className="button_regular" onClick={handleEdit} >{staticText.edit}</button>
                             </div>
                         </div>
                     ) : <div></div>
                 }
-                <div className="box_flex_row_right">
-                    <button className="button_white" onClick={handleAdd}>{staticText.add}</button>
-                    <button className="button_regular" onClick={handleSubmit}>{staticText.submit}</button>
-                </div>
             </div>
         </div>
     )
