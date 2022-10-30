@@ -24,7 +24,16 @@ const App = () => {
     if (data != null && Object.keys(data).length > 0) {
       return setResume({ ...data })
     }
-    return setResume({})
+    return setResume({
+      "personal": {},
+      "education": [],
+      "experience": [],
+      "socialLink": {},
+      "skill": [],
+      "course": [],
+      "language": [],
+      "reference": []
+  })
   }, [])
 
   const handleSetResume = (section, formData) => {

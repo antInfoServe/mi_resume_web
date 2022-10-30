@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 const WithEducationDetailPage = (container) => {
     return ({ handleSetResume, resumeData }) => {
-        
+
         const [educationList, setEducationList] = useState(() => {
             if (resumeData.education == undefined) {
                 return []
             }
             return resumeData.education
         })
-        
+
         const [formData, setFormData] = useState({ universityName: '', degree: container.staticText.phd, field: '', presentHere: false, startDate: {}, endDate: {}, detail: '' })
         const [addEducation, setAddEducation] = useState(true)
 
@@ -71,6 +71,18 @@ const WithEducationDetailPage = (container) => {
             return setEducationList(list)
         }
 
+        const handleMove = (e) => {
+            let arr = [...educationList]
+            if (e.target.name == 'moveUp') {
+                arr = container.relocator().moveUp(arr, e.target.id)
+                console.log(arr)
+                return setEducationList(arr)
+            }
+            arr = container.relocator().moveDown(arr, e.target.id)
+            console.log(arr)
+            return setEducationList(arr)
+        }
+
         const handleSubmit = () => {
             try {
                 handleSetResume('education', educationList)
@@ -95,6 +107,7 @@ const WithEducationDetailPage = (container) => {
                     handleDelete={handleDelete}
                     handleModal={handleModal}
                     handleEdit={handleEdit}
+                    handleMove={handleMove}
                     handleSubmit={handleSubmit}
                 />
             </>
