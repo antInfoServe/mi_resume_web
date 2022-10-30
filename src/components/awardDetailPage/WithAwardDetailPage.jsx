@@ -68,6 +68,16 @@ const WithAwardDetailPage = (container) => {
             return setAwardList(list)
         }
 
+        const handleMove = (e) => {
+            let arr = [...awardList]
+            if (e.target.name === 'moveUp') {
+                arr = container.relocator().moveUp(arr, e.target.id)
+                return setAwardList(arr)
+            }
+            arr = container.relocator().moveDown(arr, e.target.id)
+            return setAwardList(arr)
+        }
+
         const handleSubmit = () => {
             try {
                 handleSetResume('award', awardList)
@@ -92,6 +102,7 @@ const WithAwardDetailPage = (container) => {
                     handleDelete={handleDelete}
                     handleModal={handleModal}
                     handleEdit={handleEdit}
+                    handleMove={handleMove}
                     handleSubmit={handleSubmit}
                 />
             </>
