@@ -68,6 +68,16 @@ const WithCourseDetailPage = (container) => {
             return setCourseList(list)
         }
 
+        const handleMove = (e) => {
+            let arr = [...courseList]
+            if(e.target.name === 'moveUp'){
+                arr = container.relocator().moveUp(arr, e.target.id)
+                return setCourseList(arr)
+            }
+            arr = container.relocator().moveDown(arr, e.target.id)
+            return setCourseList(arr)
+        }
+
         const handleSubmit = () => {
             try {
                 handleSetResume('course', courseList)
@@ -92,6 +102,7 @@ const WithCourseDetailPage = (container) => {
                     handleModal={handleModal}
                     handleAdd={handleAdd}
                     handleEdit={handleEdit}
+                    handleMove={handleMove}
                     handleSubmit={handleSubmit}
                 />
             </>
