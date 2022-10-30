@@ -13,6 +13,7 @@ const ExperienceDetailList = ({ experienceList,
     handleAdd,
     addExperience,
     handleEdit,
+    handleMove,
     handleSubmit
 }) => {
     return (
@@ -33,6 +34,10 @@ const ExperienceDetailList = ({ experienceList,
                 }
             </div>
             <div className="box_flex_col_left">
+                <div className="box_flex_row_right">
+                    <button className="button_white" onClick={handleAdd}>{staticText.add}</button>
+                    <button className="button_regular" onClick={handleSubmit}>{staticText.submitExperience}</button>
+                </div>
                 {
                     //experienceDetailCard
                     experienceList.length > 0 ? experienceList.map((ele, index) =>
@@ -53,16 +58,14 @@ const ExperienceDetailList = ({ experienceList,
                                 }
                             </div>
                             <div className="box_flex_row_right">
+                                {index > 0 ? <button className="button_white" name="moveUp" id={index} onClick={handleMove}>↑</button> : null}
+                                {index < experienceList.length -1 ? <button className="button_white" name="moveDown" id={index} onClick={handleMove}>↓</button> : null}
                                 <button id='delete' className='button_white' value={index} onClick={handleDelete}>{staticText.delete}</button>
                                 <button value={index} className="button_regular" onClick={handleEdit} >{staticText.edit}</button>
                             </div>
                         </div>
                     ) : <div></div>
                 }
-                <div className="box_flex_row_right">
-                    <button className="button_white" onClick={handleAdd}>{staticText.add}</button>
-                    <button className="button_regular" onClick={handleSubmit}>{staticText.submitExperience}</button>
-                </div>
             </div>
         </div>
     )

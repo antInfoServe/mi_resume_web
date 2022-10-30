@@ -43,7 +43,7 @@ const WithExperienceDetailPage = (container) => {
             return setAddExperience(bool)
         }
 
-        const handleAdd = () =>{
+        const handleAdd = () => {
             setFormData({ employerName: '', designation: '', workHere: false, startDate: {}, endDate: {}, detail: '' })
             handleModal(true)
         }
@@ -54,7 +54,6 @@ const WithExperienceDetailPage = (container) => {
                 const list = [...experienceList]
                 const data = formData
                 data.detail = container.parser().stringToArray(data.detail)
-                console.log(data.detail)
                 list.unshift(data)
                 setExperienceList(list)
                 return handleModal(false)
@@ -70,12 +69,22 @@ const WithExperienceDetailPage = (container) => {
             return setExperienceList(list)
         }
 
+        const handleMove = (e) => {
+            let arr = [...experienceList]
+            if (e.target.name === 'moveUp') {
+                container.relocator().moveUp(arr, e.target.id)
+                return setExperienceList(arr)
+            }
+            container.relocator().moveDown(arr, e.target.id)
+            return setExperienceList(arr)
+        }
+
         const handleSubmit = () => {
             try {
-                handleSetResume('experience',experienceList)
+                handleSetResume('experience', experienceList)
                 return window.location.href = '/menu'
             } catch (err) {
-                console.log
+                console.log(err.message)
             }
         }
 
@@ -94,6 +103,7 @@ const WithExperienceDetailPage = (container) => {
                     handleModal={handleModal}
                     handleAdd={handleAdd}
                     handleEdit={handleEdit}
+                    handleMove={handleMove}
                     handleSubmit={handleSubmit}
                 />
             </>
