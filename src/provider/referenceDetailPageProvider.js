@@ -5,6 +5,7 @@ import ReferenceDetailList from '../components/referenceDetailPage/ReferenceDeta
 import ReferenceDetailForm from '../components/referenceDetailPage/ReferenceDetailForm'
 import staticText from '../utils/staticText'
 import validatorFactory from '../utils/validator'
+import relocatorFactory from '../utils/relocator'
 
 import { useNavigate } from "react-router-dom";
 
@@ -16,6 +17,7 @@ c.setComponent('ReferenceDetailList', ReferenceDetailList)
 c.setComponent('staticText', staticText)
 c.setInternalModule('validator', validatorFactory)
 c.setExternalModule('useNavigate', useNavigate)
+c.setInternalModule('relocator', relocatorFactory)
 
 const ReferenceDetailPage = WithReferenceDetailPage(c.getContainer())
 

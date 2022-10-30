@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 const WithReferenceDetailPage = (container) => {
-    return ({handleSetResume, resumeData}) => {
+    return ({ handleSetResume, resumeData }) => {
         const [referenceList, setReferenceList] = useState(() => {
-            if(resumeData.reference == undefined){
+            if (resumeData.reference == undefined) {
                 return []
             }
             return resumeData.reference
@@ -53,11 +53,21 @@ const WithReferenceDetailPage = (container) => {
             return setReferenceList(list)
         }
 
+        const handleMove = (e) => {
+            let arr = [...referenceList]
+            if (e.target.name === 'moveUp') {
+                arr = container.relocator().moveUp(arr, e.target.id)
+                return setReferenceList(arr)
+            }
+            arr = container.relocator().moveDown(arr, e.target.id)
+            return setReferenceList(arr)
+        }
+
         const handleSubmit = () => {
-            try{
+            try {
                 handleSetResume('reference', referenceList)
                 return window.location.href = '/menu'
-            } catch(err){
+            } catch (err) {
                 console.log(err.message)
             }
         }
@@ -76,6 +86,7 @@ const WithReferenceDetailPage = (container) => {
                     handleModal={handleModal}
                     handleAdd={handleAdd}
                     handleEdit={handleEdit}
+                    handleMove = {handleMove}
                     handleSubmit={handleSubmit}
                 />
             </>
