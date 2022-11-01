@@ -7,7 +7,27 @@
   --color-secondary: #fafafa;
   --color-tertiary: #9e9e9e;
   --app-width: 360px;
-  --app-height: 100vh
+  --app-height: 90vh;
+  --display-margin: 5vh;
+  --display-shadow: 4px 4px 3px #777777;
+  --display-border: 20px;
+  --modal-bottom: 5vh;
+  --modal-raidus: 20px;
+}
+
+html {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #ffac30;
+}
+
+#root {
+  height: 100vh;
 }
 
 @media only screen and (max-width: 500px) {
@@ -19,22 +39,29 @@
     --font-h1: 18px;
     --color-secondary: #fafafa;
     --color-tertiary: #9e9e9e;
-    --app-width:100vw
+    --app-width: 100vw;
+    --app-height: auto;
+    --display-margin: 0px;
+    --display-shadow: none;
+    --display-border: none;
+    --modal-bottom: 0px;
+    --modal-raidus: 30px 30px 0px 0px;
+
   }
-}
+  html {
+    padding: 0px;
+    margin: 0px;
+  }
 
-html {
-  padding: 0px;
-  margin: 0px;
-}
+  body {
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+  }
 
-body {
-  padding: 0px;
-  margin: 0px;
-}
-
-#root{
-  height: 100vh
+  #root {
+    height: 100vh;
+  }
 }
 
 @import "text.css";

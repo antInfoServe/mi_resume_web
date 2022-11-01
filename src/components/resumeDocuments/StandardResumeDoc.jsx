@@ -62,139 +62,208 @@ const style = StyleSheet.create({
     }
 });
 
-const StandardResumeDoc = ({ resumeData }) => (
-    <Document>
-        <Page style={style.page}>
+const Personal = ({ resumeData }) => <View style={style.section}>
+    <View style={style.subSection}>
+        <Text style={style.title}>{resumeData.personal.name}</Text>
+    </View>
+    <View style={style.subSection}>
+        <Text style={style.body}>{resumeData.personal.mobile}, {resumeData.personal.email}</Text>
+        {
+            resumeData.socialLink ? <Text style={style.body}>
+                {resumeData.socialLink.linkedin ? resumeData.socialLink.linkedin + ", " : null}
+                {resumeData.socialLink.facebook ? resumeData.socialLink.facebook + ", " : null}
+                {resumeData.socialLink.instagram ? resumeData.socialLink.instagram + ", " : null}
+                {resumeData.socialLink.github ? resumeData.socialLink.github + ", " : null}
+                {resumeData.socialLink.portfolio ? resumeData.socialLink.portfolio : null}
+            </Text> : null
+        }
+        <View style={style.hr}></View>
+    </View>
+</View>
+
+const Experience = ({ resumeData }) => {
+    if (resumeData.experience.length > 0) {
+        return (
             <View style={style.section}>
                 <View style={style.subSection}>
-                    <Text style={style.title}>{resumeData.personal.name}</Text>
+                    <Text style={style.title}>Work experience</Text>
                 </View>
-                <View style={style.subSection}>
-                    <Text style={style.body}>{resumeData.personal.mobile}, {resumeData.personal.email}</Text>
-                    {
-                        resumeData.socialLink ? <Text style={style.body}>
-                            {resumeData.socialLink.linkedin ? resumeData.socialLink.linkedin + ", " : null}
-                            {resumeData.socialLink.facebook ? resumeData.socialLink.facebook + ", " : null}
-                            {resumeData.socialLink.instagram ? resumeData.socialLink.instagram + ", " : null}
-                            {resumeData.socialLink.github ? resumeData.socialLink.github + ", " : null}
-                            {resumeData.socialLink.portfolio ? resumeData.socialLink.portfolio : null}
-                        </Text> : null
-                    }
-                </View>
-            </View>
-            <View style={style.hr}></View>
-            {//experience section
-                resumeData.experience.length > 0 ? <View style={style.section}>
-                    <View style={style.subSection}>
-                        <Text style={style.title}>Work experience</Text>
-                    </View>
-                    {
-                        resumeData.experience.map((ele, index) => <View key={index} style={style.subSection}>
-                            <Text style={style.heading}>{ele.designation}</Text>
-                            <Text style={style.body}>{ele.employerName} | {ele.startDate.month}/ {ele.startDate.year} - {
-                                ele.workHere ? "present" : ele.endDate.month + "/ " + ele.endDate.year
-                            }</Text>
-                            {
-                                ele.detail.length > 0 ? ele.detail.map((e, index) => <View key={index} style={style.longListView}><Text style={style.body}>-</Text><Text key={index} style={style.longList}>{e}</Text></View>) : null
-                            }
-                        </View>)
-                    }
-                </View> : null
-            }
-            <View style={style.hr}></View>
-            {//education section
-                resumeData.education.length > 0 ? <View style={style.section}>
-                    <View style={style.subSection}>
-                        <Text style={style.title}>Education</Text>
-                    </View>
-                    {
-                        resumeData.education.map((ele, index) => <View key={index} style={style.subSection}>
-                            <Text style={style.heading}>{ele.degree} - {ele.field}</Text>
-                            <Text style={style.body}>{ele.universityName} | {ele.startDate.month}/ {ele.startDate.year} - {
-                                ele.presentHere ? "present" : ele.endDate.month + "/ " + ele.endDate.year
-                            }</Text>
-                            {
-                                ele.detail.length > 0 ? ele.detail.map((e, index) => <View key={index} style={style.longListView}><Text style={style.body}>-</Text><Text key={index} style={style.longList}>{e}</Text></View>) : null
-                            }
-                        </View>)
-                    }
-                </View> : null
-            }
-            <View style={style.hr}></View>
-            {//skill section
-                resumeData.skill.length > 0 ? <View style={style.section}>
-                    <View style={style.subSection}>
-                        <Text style={style.title}>Skill</Text>
-                    </View>
-                    <View style={style.subSecFlex}>
+                {
+                    resumeData.experience.map((ele, index) => <View key={index} style={style.subSection}>
+                        <Text style={style.heading}>{ele.designation}</Text>
+                        <Text style={style.body}>{ele.employerName} | {ele.startDate.month}/ {ele.startDate.year} - {
+                            ele.workHere ? "present" : ele.endDate.month + "/ " + ele.endDate.year
+                        }</Text>
                         {
-                            resumeData.skill.map((ele, index) => <Text key={index} style={style.list}>{ele}</Text>)
+                            ele.detail.length > 0 ? ele.detail.map((e, index) => <View key={index} style={style.longListView}><Text style={style.body}>-</Text><Text key={index} style={style.longList}>{e}</Text></View>) : null
                         }
-                    </View>
-                </View> : null
-            }
-            <View style={style.hr}></View>
-            {//course section
-                resumeData.course.length > 0 ? <View style={style.section}>
-                    <View style={style.subSection}>
-                        <Text style={style.title}>Course</Text>
-                    </View>
+                    </View>)
+                }
+                <View style={style.hr}></View>
+            </View>
+        )
+    }
+    return null
+}
+
+const Education = ({ resumeData }) => {
+    if (resumeData.experience.length > 0) {
+        return (
+            <View style={style.section}>
+                <View style={style.subSection}>
+                    <Text style={style.title}>Education</Text>
+                </View>
+                {
+                    resumeData.education.map((ele, index) => <View key={index} style={style.subSection}>
+                        <Text style={style.heading}>{ele.degree} - {ele.field}</Text>
+                        <Text style={style.body}>{ele.universityName} | {ele.startDate.month}/ {ele.startDate.year} - {
+                            ele.presentHere ? "present" : ele.endDate.month + "/ " + ele.endDate.year
+                        }</Text>
+                        {
+                            ele.detail.length > 0 ? ele.detail.map((e, index) => <View key={index} style={style.longListView}><Text style={style.body}>-</Text><Text key={index} style={style.longList}>{e}</Text></View>) : null
+                        }
+                    </View>)
+                }
+                <View style={style.hr}></View>
+            </View>
+        )
+    }
+    return null
+}
+
+const Skill = ({ resumeData }) => {
+    if (resumeData.skill.length > 0) {
+        return (
+            <View style={style.section}>
+                <View style={style.subSection}>
+                    <Text style={style.title}>Skill</Text>
+                </View>
+                <View style={style.subSecFlex}>
                     {
-                        resumeData.course.map((ele, index) => <View key={index} style={style.subSection}>
-                            <Text style={style.heading}>{ele.courseName}</Text>
-                            <Text style={style.body}>{ele.instituteName} | {ele.startDate.month}/ {ele.startDate.year} - {
-                                ele.presentHere ? "present" : ele.endDate.month + "/ " + ele.endDate.year
-                            }</Text>
-                            <Text style={style.body}>{ele.certificate || null}</Text>
-                        </View>)
+                        resumeData.skill.map((ele, index) => <Text key={index} style={style.list}>{ele}</Text>)
                     }
-                </View> : null
-            }
-            <View style={style.hr}></View>
-            {//award section
-                resumeData.award.length > 0 ? <View style={style.section}>
-                    <View style={style.subSection}>
-                        <Text style={style.title}>Award</Text>
-                    </View>
-                    {
-                        resumeData.award.map((ele, index) => <View key={index} style={style.subSection}>
-                            <Text style={style.heading}>{ele.title}</Text>
-                            <Text style={style.body}>{ele.issuer} | {ele.issueDate.month}/{ele.issueDate.year}</Text>
-                            {
-                                ele.detail.length > 0 ? ele.detail.map((e, index) => <View key={index} style={style.longListView}><Text style={style.body}>-</Text><Text key={index} style={style.longList}>{e}</Text></View>) : null
-                            }
-                        </View>)
+                </View>
+                <View style={style.hr}></View>
+            </View>
+        )
+    }
+    return null
+}
+
+const Course = ({ resumeData }) => {
+    if (resumeData.course.length > 0) {
+        return (
+            <View style={style.section}>
+                <View style={style.subSection}>
+                    <Text style={style.title}>Course</Text>
+                </View>
+                {
+                    resumeData.course.map((ele, index) => <View key={index} style={style.subSection}>
+                        <Text style={style.heading}>{ele.courseName}</Text>
+                        <Text style={style.body}>{ele.instituteName} | {ele.startDate.month}/ {ele.startDate.year} - {
+                            ele.presentHere ? "present" : ele.endDate.month + "/ " + ele.endDate.year
+                        }</Text>
+                        <Text style={style.body}>{ele.certificate || null}</Text>
+                    </View>)
+                }
+                <View style={style.hr}></View>
+            </View>
+        )
+    }
+    return null
+}
+
+const Award = ({ resumeData }) => {
+    if (resumeData.award.length > 0) {
+        return (
+            <View style={style.section}>
+                <View style={style.subSection}>
+                    <Text style={style.title}>Award</Text>
+                </View>
+                {
+                    resumeData.award.map((ele, index) => <View key={index} style={style.subSection}>
+                        <Text style={style.heading}>{ele.title}</Text>
+                        <Text style={style.body}>{ele.issuer} | {ele.issueDate.month}/{ele.issueDate.year}</Text>
+                        {
+                            ele.detail.length > 0 ? ele.detail.map((e, index) => <View key={index} style={style.longListView}><Text style={style.body}>-</Text><Text key={index} style={style.longList}>{e}</Text></View>) : null
+                        }
+                    </View>)
+                }
+                <View style={style.hr}></View>
+            </View>
+        )
+    }
+    return null
+}
+
+const Language = ({ resumeData }) => {
+    if (resumeData.language.length > 0) {
+        return (
+            <View style={style.section}>
+                <View style={style.subSection}>
+                    <Text style={style.title}>Language</Text>
+                </View>
+                {
+                    resumeData.language.map((ele, index) => <View key={index} style={style.subSection}>
+                        <Text style={style.heading}>{ele.language}</Text>
+                        <Text style={style.body}>Proficiency: {ele.proficiency}</Text>
+                    </View>)
+                }
+                <View style={style.hr}></View>
+            </View>
+        )
+    }
+    return null
+}
+
+const Reference = ({ resumeData }) => {
+    if (resumeData.reference.length > 0) {
+        return (
+            <View style={style.section}>
+                <View style={style.subSection}>
+                    <Text style={style.title}>Reference</Text>
+                </View>
+                {
+                    resumeData.reference.map((ele, index) => <View key={index} style={style.subSection}>
+                        <Text style={style.heading}>{ele.name}</Text>
+                        <Text style={style.body}>{ele.designation} - {ele.companyName}</Text>
+                        <Text style={style.body}>{ele.mobile}, {ele.email}</Text>
+                    </View>)
+                }
+                <View style={style.hr}></View>
+            </View>
+        )
+    }
+    return null
+}
+
+
+const StandardResumeDoc = ({ resumeData, resumeOrder }) => (
+    <Document>
+        <Page style={style.page}>
+            {
+                resumeOrder.map((ele, index) => {
+                    switch (ele) {
+                        case 'personal':
+                            return <Personal key={index} resumeData={resumeData} />
+                        case 'experience':
+                            return <Experience key={index} resumeData={resumeData} />
+                        case 'education':
+                            return <Education key={index} resumeData={resumeData} />
+                        case 'skill':
+                            return <Skill key={index} resumeData={resumeData} />
+                        case 'course':
+                            return <Course key={index} resumeData={resumeData} />
+                        case 'award':
+                            return <Award key={index} resumeData={resumeData} />
+                        case 'language':
+                            return <Language key={index} resumeData={resumeData} />
+                        case 'reference':
+                            return <Reference key={index} resumeData={resumeData} />
+                        default:
+                            return null
                     }
-                </View> : null
-            }
-            <View style={style.hr}></View>
-            {//language section
-                resumeData.award.length > 0 ? <View style={style.section}>
-                    <View style={style.subSection}>
-                        <Text style={style.title}>Language</Text>
-                    </View>
-                    {
-                        resumeData.language.map((ele, index) => <View key={index} style={style.subSection}>
-                            <Text style={style.heading}>{ele.language}</Text>
-                            <Text style={style.body}>Proficiency: {ele.proficiency}</Text>
-                        </View>)
-                    }
-                </View> : null
-            }
-            <View style={style.hr}></View>
-            {//reference section
-                resumeData.reference.length > 0 ? <View style={style.section}>
-                    <View style={style.subSection}>
-                        <Text style={style.title}>Reference</Text>
-                    </View>
-                    {
-                        resumeData.reference.map((ele, index) => <View key={index} style={style.subSection}>
-                            <Text style={style.heading}>{ele.name}</Text>
-                            <Text style={style.body}>{ele.designation} - {ele.companyName}</Text>
-                            <Text style={style.body}>{ele.mobile}, {ele.email}</Text>
-                        </View>)
-                    }
-                </View> : null
+                })
             }
         </Page>
     </Document>

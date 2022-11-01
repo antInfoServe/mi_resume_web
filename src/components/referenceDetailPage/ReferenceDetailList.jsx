@@ -57,7 +57,7 @@ const ReferenceDetailList = ({ referenceList,
                             </div>
                             <div className="box_flex_row_right">
                                 {index > 0 ? <button className="button_white" id={index} name="moveUp" onClick={handleMove}>↑</button> : null}
-                                {index < referenceList.length - 1 ? <button className="button_white" id={index} name="moveDown" onClick={handleMove}>↓</button> : null}
+                                {index < referenceList.length - 1 ? <button className="button_white" id={index} name="moveDown" onClick={handleMove}>↓</button> : <div className='button_spacer'></div>}
                                 <button id='delete' className='button_white' value={index} onClick={handleDelete}>{staticText.delete}</button>
                                 <button value={index} className="button_regular" onClick={handleEdit} >{staticText.edit}</button>
                             </div>

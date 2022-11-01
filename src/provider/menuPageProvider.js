@@ -5,6 +5,7 @@ import MenuList from "../components/menuPage/MenuList";
 import DownloadResume from "../components/menuPage/DownloadResume";
 import staticText from "../utils/staticText";
 import StandardResumeDoc from "../components/resumeDocuments/StandardResumeDoc";
+import relocatorFactory from '../utils/relocator'
 
 import { useNavigate } from "react-router-dom";
 import { PDFDownloadLink } from "@react-pdf/renderer";
@@ -15,6 +16,7 @@ c.setComponent('MenuList', MenuList)
 c.setComponent('staticText', staticText)
 c.setComponent('DownloadResume', DownloadResume)
 c.setComponent('StandardResumeDoc', StandardResumeDoc)
+c.setInternalModule('relocator', relocatorFactory)
 c.setExternalModule('useNavigate', useNavigate)
 c.setExternalModule('PDFDownloadLink', PDFDownloadLink)
 

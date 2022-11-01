@@ -8,7 +8,9 @@ const MenuList = ({
     handleModal,
     DownloadResume,
     Document,
-    resumeData
+    resumeData,
+    resumeOrder,
+    handleMove
 }) => {
     const navigate = useNavigate();
     return (
@@ -16,37 +18,32 @@ const MenuList = ({
             <div className="box_banner">
                 <MiResumeLogo />
             </div>
+            <div className="box_flex_row_right">
+                <button className="button_regular" onClick={() => handleModal(true)}>{staticText.generateResume}</button>
+            </div>
             {download ? <DownloadResume
                 handleModal={handleModal}
                 Document={Document}
+                resumeOrder={resumeOrder}
                 resumeData={resumeData}
                 staticText={staticText}
-
             /> : <div></div>}
             <div className="box_flex_col_left">
-                {[
-                    "personal",
-                    "education",
-                    "experience",
-                    "socialLink",
-                    "skill",
-                    "course",
-                    "award",
-                    "language",
-                    "reference",
-                ].map((ele, index) => (
-                    <button
-                        className="button_regular"
-                        id={ele}
-                        onClick={() => navigate(`/${ele}`)}
-                        key={index}
-                    >
-                        {staticText[ele]}
-                    </button>
+                {resumeOrder.map((ele, index) => (
+                    <div className="box_flex_row_apart" key={index}>
+                        <button
+                            className="button_regular"
+                            id={ele}
+                            onClick={() => navigate(`/${ele}`)}
+                        >
+                            {staticText[ele]}
+                        </button>
+                        <div className="box_flex_row_right">
+                            {index > 1 ? <button id={index} className="button_white" onClick={handleMove} name='moveUp'>↑</button> : null}
+                            {index > 0 && index < 8 ? <button id={index} className="button_white" onClick={handleMove} name='moveDown'>↓</button> : <div className="button_spacer"></div>}
+                        </div>
+                    </div>
                 ))}
-            </div>
-            <div className="box_flex_row_right">
-                <button className="button_regular" onClick={() => handleModal(true)}>{staticText.generateResume}</button>
             </div>
         </div>
     );

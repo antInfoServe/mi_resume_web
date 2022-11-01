@@ -18,7 +18,8 @@ import "./stylesheets/app.css";
 
 const App = () => {
   const [resume, setResume] = useState(null)
-
+  const [resumeOrder, setResumeOrder] = useState(["personal", "experience", "education", "socialLink", "skill", "course", "award", "language", "reference"])
+ 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('resume'))
     if (data != null && Object.keys(data).length > 0) {
@@ -32,9 +33,9 @@ const App = () => {
       "skill": [],
       "course": [],
       "language": [],
-      "award":[],
+      "award": [],
       "reference": []
-  })
+    })
   }, [])
 
   const handleSetResume = (section, formData) => {
@@ -61,7 +62,7 @@ const App = () => {
             <Route path="/personal" element={<PersonalDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />
             <Route path="/education" element={<EducationDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />
             <Route path="/experience" element={<ExperienceDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />
-            <Route path='/menu' element={<MenuPage resumeData={resume}/>} />
+            <Route path='/menu' element={<MenuPage resumeOrder={resumeOrder} setResumeOrder={setResumeOrder} resumeData={resume} />} />
             <Route path='/socialLink' element={<SocialLinkPage handleSetResume={handleSetResume} resumeData={resume} />} />
             <Route path="/skill" element={<SkillPage handleSetResume={handleSetResume} resumeData={resume} />} />
             <Route path="/course" element={<CourseDetailPage handleSetResume={handleSetResume} resumeData={resume} />} />

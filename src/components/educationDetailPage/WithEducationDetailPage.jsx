@@ -75,11 +75,9 @@ const WithEducationDetailPage = (container) => {
             let arr = [...educationList]
             if (e.target.name == 'moveUp') {
                 arr = container.relocator().moveUp(arr, e.target.id)
-                console.log(arr)
                 return setEducationList(arr)
             }
             arr = container.relocator().moveDown(arr, e.target.id)
-            console.log(arr)
             return setEducationList(arr)
         }
 

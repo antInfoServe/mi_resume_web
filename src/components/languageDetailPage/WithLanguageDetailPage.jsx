@@ -9,7 +9,7 @@ const WithLanguageDetailPage = (container) => {
             return resumeData.language
         })
 
-        const [formData, setFormData] = useState({ language: '', proficiency: '' })
+        const [formData, setFormData] = useState({ language: '', proficiency: 'Beginner' })
         const [addLanguage, setAddLanguage] = useState(true)
 
         const handleChange = (e) => {
@@ -30,7 +30,7 @@ const WithLanguageDetailPage = (container) => {
         }
 
         const handleAdd = () => {
-            setFormData({ language: '', proficiency: '' })
+            setFormData({ language: '', proficiency: 'Beginner' })
             handleModal(true)
         }
 

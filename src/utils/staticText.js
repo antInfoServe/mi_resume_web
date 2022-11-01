@@ -43,7 +43,7 @@ const staticText = {
   socialLink: "add/edit social links",
   skill: "add/edit skills",
   course: "add/edit courses",
-  award: "add/edit awards and honours",
+  award: "add/edit awards",
   language: "add/edit languages",
   reference: "add/edit references",
   generateResume: 'generate resume',

@@ -1,5 +1,10 @@
 .display_regular{
     width: var(--app-width);
+    height: var(--app-height);
     overflow-y: auto;
+    background-color: white;
+    margin: var(--display-margin);
+    box-shadow: var(--display-shadow);
+    border-radius: var(--display-border);
 }
 
