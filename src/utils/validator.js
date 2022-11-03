@@ -52,9 +52,9 @@ class Validator {
             this.error.id = 'mobile'
             throw this.error
         }
-        const regex = /^[5-9]\d{9}$/
+        const regex = /^[0-9]\d{9}$/
         if (!regex.test(mobile)) {
-            this.error = new Error("please enter a valid mobile number")
+            this.error = new Error("please enter a valid 10 digit mobile number")
             this.error.id = 'mobile'
             throw this.error
         }
