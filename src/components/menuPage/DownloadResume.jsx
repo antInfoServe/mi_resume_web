@@ -15,8 +15,10 @@ const DownloadResume = ({ staticText, Document, resumeData, resumeOrder, handleM
                 <DownloadPdfVector />
                 <PDFDownloadLink document={<Document resumeData={resumeData} resumeOrder={resumeOrder} />} fileName="mi_resume_dot_org.pdf">
                     {({ blob, url, loading, error }) =>
-                        loading ? null : <button className="button_regular">{staticText.download}</button>
-                    }
+                        loading ? null : <button className="button_regular" onClick={() => gtag('event', 'click', {
+                            'event_category': 'menuPage',
+                            'event_label': 'download resume'
+                        })}>{staticText.download}</button>}
                 </PDFDownloadLink>
             </div>
         </div>

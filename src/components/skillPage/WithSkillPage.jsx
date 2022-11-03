@@ -38,6 +38,10 @@ const WithSkillPage = (container) => {
         const handleSubmit = () => {
             try {
                 handleSetResume('skill', skillList)
+                gtag('event', 'click', {
+                    'event_category': 'skillPage',
+                    'event_label': 'submit skill detail'
+                })
                 return window.location.href = '/menu'
             } catch (err) {
                 console.log(err.message)

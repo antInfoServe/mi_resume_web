@@ -81,6 +81,10 @@ const WithAwardDetailPage = (container) => {
         const handleSubmit = () => {
             try {
                 handleSetResume('award', awardList)
+                gtag('event', 'click', {
+                    'event_category': 'awardPage',
+                    'event_label': 'submit award detail'
+                })
                 return window.location.href = '/menu'
             } catch (err) {
                 console.log(err.message)

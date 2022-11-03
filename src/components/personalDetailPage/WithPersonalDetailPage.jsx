@@ -22,6 +22,10 @@ const WithPersonalDetailPage = (container) => {
             try {
                 container.validator().personalDetails(formData)
                 handleSetResume('personal', formData)
+                gtag('event', 'click', {
+                    'event_category': 'personalPage',
+                    'event_label': 'submit personal details'
+                })
                 window.location.href = '/education'
             } catch (err) {
                 document.getElementById(err.id).style.borderColor = 'red'

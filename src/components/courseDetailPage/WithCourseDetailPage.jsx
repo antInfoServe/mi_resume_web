@@ -81,6 +81,10 @@ const WithCourseDetailPage = (container) => {
         const handleSubmit = () => {
             try {
                 handleSetResume('course', courseList)
+                gtag('event', 'click', {
+                    'event_category': 'coursePage',
+                    'event_label': 'submit course detail'
+                })
                 return window.location.href = '/menu'
             } catch (err) {
                 console.log(err.message)

@@ -66,6 +66,10 @@ const WithReferenceDetailPage = (container) => {
         const handleSubmit = () => {
             try {
                 handleSetResume('reference', referenceList)
+                gtag('event', 'click', {
+                    'event_category': 'referencePage',
+                    'event_label': 'submit reference detail'
+                })
                 return window.location.href = '/menu'
             } catch (err) {
                 console.log(err.message)

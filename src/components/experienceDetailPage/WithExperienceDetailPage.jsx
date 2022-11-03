@@ -82,6 +82,10 @@ const WithExperienceDetailPage = (container) => {
         const handleSubmit = () => {
             try {
                 handleSetResume('experience', experienceList)
+                gtag('event', 'click', {
+                    'event_category': 'experiencePage',
+                    'event_label': 'submit experience detail'
+                })
                 return window.location.href = '/menu'
             } catch (err) {
                 console.log(err.message)

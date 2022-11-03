@@ -66,6 +66,10 @@ const WithLanguageDetailPage = (container) => {
         const handleSubmit = () => {
             try {
                 handleSetResume('language', languageList)
+                gtag('event', 'click', {
+                    'event_category': 'languagePage',
+                    'event_label': 'submit language detail'
+                })
                 return window.location.href = '/menu'
             } catch (err) {
                 console.log(err.message)

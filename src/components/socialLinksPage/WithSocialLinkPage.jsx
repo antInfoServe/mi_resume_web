@@ -18,6 +18,10 @@ const WithSocialLinkPage = (container) => {
         const handleSubmit = () => {
             try {
                 handleSetResume('socialLink', formData)
+                gtag('event', 'click', {
+                    'event_category': 'socialLinkPage',
+                    'event_label': 'submit social link detail'
+                })
                 return window.location.href = '/menu'
             } catch (err) {
                 console.log(err.message)
