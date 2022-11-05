@@ -18,7 +18,7 @@ const LanguageDetailList = ({ languageList,
     return (
         <div className="display_regular">
             <div className='box_banner'>
-                <MiResumeLogo />
+                <img src={MiResumeLogo} alt="MiResume.org logo" />
             </div>
             <div>
                 {

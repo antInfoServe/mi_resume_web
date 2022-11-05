@@ -5,7 +5,7 @@ const PersonalDetailForm = ({ staticText, formData, handleChange, handleSubmit }
     return (
         <div className='display_regular'>
             <div className='box_banner'>
-                <MiResumeLogo />
+                <img src={MiResumeLogo} alt="MiResume.org logo" />
             </div>
             <div className='box_flex_col_left'>
                 <div>

@@ -5,7 +5,7 @@ const SocialLinkForm = ({ staticText, formData, handleChange, handleSubmit }) =>
     return (
         <div className='display_regular'>
             <div className='box_banner'>
-                <MiResumeLogo />
+                <img src={MiResumeLogo} alt="MiResume.org logo" />
             </div>
             <div className='box_flex_col_left'>
                 {
@@ -16,7 +16,7 @@ const SocialLinkForm = ({ staticText, formData, handleChange, handleSubmit }) =>
                         "github",
                         "portfolio"
 
-                    ].map((ele, index) =><div key={index}>
+                    ].map((ele, index) => <div key={index}>
                         <p className='text_regular'>{staticText[ele]}</p>
                         <input className='input_box_regular' type='url' id={ele} value={formData[ele]} onChange={handleChange} placeholder={staticText[ele]} />
                     </div>)

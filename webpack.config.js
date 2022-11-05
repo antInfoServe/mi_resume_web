@@ -12,7 +12,8 @@ module.exports = {
       { test: /\.js$/, use: "babel-loader", exclude: /node_modules/ },
       { test: /\.jsx$/, use: "babel-loader", exclude: /node_modules/ },
       { test: /\.css$/, use: [MiniCssExtractPlugin.loader, "css-loader"] },
-      { test: /\.svg$/, use: ["@svgr/webpack"] },
+      // { test: /\.svg$/, use: ["@svgr/webpack"] },
+      { test: /\.(png|jp(e*)g|svg|gif)$/, use: [{ loader: 'file-loader' }] }
     ],
   },
   resolve: {

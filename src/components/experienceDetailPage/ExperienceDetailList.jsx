@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import MiResumeLogo from '../../assets/mi_resume_logo.svg'
 
 const ExperienceDetailList = ({ experienceList,
@@ -19,7 +19,7 @@ const ExperienceDetailList = ({ experienceList,
     return (
         <div className="display_regular">
             <div className='box_banner'>
-                <MiResumeLogo />
+                <img src={MiResumeLogo} alt="MiResume.org logo" />
             </div>
             <div>
                 {
@@ -59,7 +59,7 @@ const ExperienceDetailList = ({ experienceList,
                             </div>
                             <div className="box_flex_row_right">
                                 {index > 0 ? <button className="button_white" name="moveUp" id={index} onClick={handleMove}>↑</button> : null}
-                                {index < experienceList.length -1 ? <button className="button_white" name="moveDown" id={index} onClick={handleMove}>↓</button> : <div className='button_spacer'></div>}
+                                {index < experienceList.length - 1 ? <button className="button_white" name="moveDown" id={index} onClick={handleMove}>↓</button> : <div className='button_spacer'></div>}
                                 <button id='delete' className='button_white' value={index} onClick={handleDelete}>{staticText.delete}</button>
                                 <button value={index} className="button_regular" onClick={handleEdit} >{staticText.edit}</button>
                             </div>

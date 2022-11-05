@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import MiResumeLogo from '../../assets/mi_resume_logo.svg'
 
 const CourseDetailList = ({ courseList,
@@ -19,7 +19,7 @@ const CourseDetailList = ({ courseList,
     return (
         <div className="display_regular">
             <div className='box_banner'>
-                <MiResumeLogo />
+                <img src={MiResumeLogo} alt="MiResume.org logo" />
             </div>
             <div>
                 {

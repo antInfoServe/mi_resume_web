@@ -5,13 +5,13 @@ const SkillList = ({ staticText, skillList, handleRemove, handleAddSkill, handle
     return (
         <div className="display_regular">
             <div className='box_banner'>
-                <MiResumeLogo />
+                <img src={MiResumeLogo} alt="MiResume.org logo" />
             </div>
             <div className="box_flex_row_right">
                 <button className='button_regular' onClick={handleSubmit}>{staticText.submit}</button>
             </div>
             <div className="box_flex_row">
-                <input className="input_box_small" placeholder={staticText.searchSkill} value={skill} id = 'searchSkill' name='skill' onChange={handleChange} />
+                <input className="input_box_small" placeholder={staticText.searchSkill} value={skill} id='searchSkill' name='skill' onChange={handleChange} />
                 <button className="button_regular" onClick={handleAddSkill}>{staticText.add}</button>
             </div>
             <div className="box_flex_col_left">

@@ -45,7 +45,7 @@ body {
     --display-shadow: none;
     --display-border: none;
     --modal-bottom: 0px;
-    --modal-raidus: 30px 30px 0px 0px;
+    --modal-raidus: 20px 20px 0px 0px;
 
   }
   html {

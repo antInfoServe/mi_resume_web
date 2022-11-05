@@ -16,7 +16,7 @@ const MenuList = ({
     return (
         <div className="display_regular">
             <div className="box_banner">
-                <MiResumeLogo />
+                <img src={MiResumeLogo} alt="MiResume.org logo" />
             </div>
             <div className="box_flex_row_right">
                 <button className="button_regular" onClick={() => handleModal(true)}>{staticText.generateResume}</button>
