@@ -48,7 +48,7 @@ const App = () => {
   if (resume == null) {
     return (
       <div className="app">
-        {/* <DisplayLoader /> */}
+        <DisplayLoader />
       </div>
     )
   }

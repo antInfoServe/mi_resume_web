@@ -6,10 +6,10 @@ const DisplayLoading = () => {
   return (
     <div className="display_regular">
       <div className='box_banner'>
-        <MiResumeLogo />
+        < img src={MiResumeLogo} alt="MiResume.org logo"/>
       </div>
       <div className="box_flex_col">
-        <LoadingIcon className="icon_xs" />
+        <img src={LoadingIcon} className="icon_xs" alt="loading animation"/>
       </div>
     </div>
   );
