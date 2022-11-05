@@ -28,6 +28,7 @@ const WithPersonalDetailPage = (container) => {
                 })
                 window.location.href = '/education'
             } catch (err) {
+                window.alert(err.message)
                 document.getElementById(err.id).style.borderColor = 'red'
             }
 

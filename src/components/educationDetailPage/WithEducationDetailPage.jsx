@@ -90,6 +90,7 @@ const WithEducationDetailPage = (container) => {
                 })
                 return window.location.href = '/experience'
             } catch (err) {
+                window.alert(err.message)
                 console.log(err.message)
             }
         }

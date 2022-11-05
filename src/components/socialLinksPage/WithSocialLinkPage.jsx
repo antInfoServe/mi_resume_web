@@ -24,6 +24,7 @@ const WithSocialLinkPage = (container) => {
                 })
                 return window.location.href = '/menu'
             } catch (err) {
+                window.alert(err.message)
                 console.log(err.message)
             }
         }
