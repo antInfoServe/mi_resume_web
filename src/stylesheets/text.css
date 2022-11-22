@@ -41,3 +41,10 @@
     font-family: var(--font-family-default);
     color: var(--color-black);
 }
+
+.text_h2{
+    margin: 10px 0px 5px 0px;
+    font-size: var(--font-h2);
+    font-family: var(--font-family-default);
+    color: var(--color-black);
+}

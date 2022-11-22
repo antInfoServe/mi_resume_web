@@ -8,3 +8,14 @@
     border-radius: var(--display-border);
 }
 
+.display_landing{
+    width: var(--app-width);
+    height: var(--app-height);
+    background: url("https://firebasestorage.googleapis.com/v0/b/mi-resume.appspot.com/o/image%2Fprofessional_lady_background.webp?alt=media&token=f2f28376-c1ae-4366-8962-fefe7c3aa185") no-repeat;
+    background-size: var(--app-width) auto;
+    background-color: #F5F3F1;
+    overflow-y: auto;
+    margin: var(--display-margin);
+    box-shadow: var(--display-shadow);
+    border-radius: var(--display-border);
+}

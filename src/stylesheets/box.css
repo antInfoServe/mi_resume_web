@@ -1,3 +1,16 @@
+.box_banner_landing{
+  width: var(--app-width);
+  display: flex;
+  align-items: center;
+  padding: 10px 0px 10px 0px;
+  justify-content: start;
+}
+
+.box_flex_landing{
+  margin-top: 70%;
+  margin-left: 5%;
+}
+
 .box_banner {
   width: var(--app-width);
   background-color: #e1e1e1;

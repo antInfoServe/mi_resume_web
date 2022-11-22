@@ -13,7 +13,7 @@ module.exports = {
       { test: /\.jsx$/, use: "babel-loader", exclude: /node_modules/ },
       { test: /\.css$/, use: [MiniCssExtractPlugin.loader, "css-loader"] },
       // { test: /\.svg$/, use: ["@svgr/webpack"] },
-      { test: /\.(png|jp(e*)g|svg|gif)$/, use: [{ loader: 'file-loader' }] }
+      { test: /\.(png|jp(e*)g|svg|gif|webp)$/, use: [{ loader: 'file-loader' }] },
     ],
   },
   resolve: {
