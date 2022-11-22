@@ -20,19 +20,22 @@ const LandingPageForm = ({ staticText, useNavigate }) => {
                 <button className='button_regular'>{staticText.bannerButton}</button>
             </div>
             <div className='box_flex_col'>
-                <img src={MiResumeLogo} className="logo_landing" alt="MiResume.org logo"/>
-                <p className='text_h1'>{staticText.landingPageTitle}</p>
-                <p className='text_regular'>{staticText.resumesCreated}</p>
-                <img src={LandingPageVector} alt="create resumes online with MiResume.org"/>
+                <img src={MiResumeLogo} className="logo_landing" alt="MiResume.org logo" />
+                <h1 className='text_h1'>{staticText.landingPageTitle}</h1>
+                <h2 className='text_regular'>{staticText.resumesCreated}</h2>
+                <img src={LandingPageVector} alt="create resumes online with MiResume.org" />
                 <button className='button_regular' onClick={() => {
                     gaEvent(staticText.newResume)
                     return navigate("/personal")
                 }}>{staticText.newResume}</button>
-                <div className='box_flex_row'>
-                    <a href="https://www.facebook.com/miresumeorg/" target='_blank'><img src={Facebook} alt='click to visit MiResume facebook page' /></a>
-                    <a href="https://www.instagram.com/mi_resume/" target='_blank'><img src={Instagram} alt="click to visit MiResume instagam page" /></a>
-                    <img src={Whatsapp} alt="click to chat with MiResume on whatsapp" />
-                    <img src={Youtube} alt="click to see how to make resume on yourtube by MiResume" />
+                <div className='box_flex_col'>
+                    <p className='text_regular'>{staticText.followUs}</p><br />
+                    <div className='box_flex_row'>
+                        <a href="https://www.facebook.com/miresumeorg/" target='_blank'><img src={Facebook} alt='click to visit MiResume facebook page' /></a>
+                        <a href="https://www.instagram.com/mi_resume/" target='_blank'><img src={Instagram} alt="click to visit MiResume instagam page" /></a>
+                        <img src={Whatsapp} alt="click to chat with MiResume on whatsapp" />
+                        <img src={Youtube} alt="click to see how to make resume on yourtube by MiResume" />
+                    </div>
                 </div>
             </div>
         </div>

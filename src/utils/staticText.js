@@ -2,7 +2,7 @@ const staticText = {
   bannerText: "save app for free",
   bannerButton: "download now",
   landingPageTitle: "free industry standard resumes",
-  resumesCreated: "resumes created till date",
+  resumesCreated: "1179* resumes created till date",
   newResume: "create new resume",
   existingResume: "share existing resume",
   name: "name *",
@@ -68,7 +68,8 @@ const staticText = {
   issuer:"issuer (or institute name)",
   title:"award title",
   issueDate:"issue date",
-  download: "download resume"
+  download: "download resume",
+  followUs:"follow us on"
 };
 
 export default staticText;
